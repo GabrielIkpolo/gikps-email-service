@@ -1,0 +1,46 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  username       String   @unique
+  password       String
+  email          String   @unique
+  fullName       String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  sentEmails     Email[]  @relation("SentEmails")
+  receivedEmails Email[]  @relation("ReceivedEmails")
+}
+
+model Email {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  subject     String
+  text        String?
+  html        String?
+  senderId    String       @db.ObjectId
+  sender      User         @relation("SentEmails", fields: [senderId], references: [id])
+  receiverId  String       @db.ObjectId
+  receiver    User         @relation("ReceivedEmails", fields: [receiverId], references: [id])
+  attachments Attachment[]
+  isRead      Boolean      @default(false)
+  isStarred   Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Attachment {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  url      String
+  filename String
+  mimeType String
+  size     Int
+  emailId  String @db.ObjectId
+  email    Email  @relation(fields: [emailId], references: [id])
+}
