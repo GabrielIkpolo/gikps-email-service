@@ -1,0 +1,31 @@
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 15:07:24"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 15:07:42"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 15:08:22"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:15"}
+{"level":"info","message":"Login attempt for username: dldldl`","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:15"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: dldldl`","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:15"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:15"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:33"}
+{"level":"info","message":"Login attempt for username: ldldl`","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:33"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: ldldl`","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:33"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:11:33"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:12:57"}
+{"level":"info","message":"Login attempt for username: dffff","service":"gikpsmail-service","timestamp":"2026-05-09 15:12:57"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: dffff","service":"gikpsmail-service","timestamp":"2026-05-09 15:12:57"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:12:57"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:02"}
+{"level":"info","message":"Login attempt for username: ksksksk`","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:02"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: ksksksk`","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:02"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:02"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:23"}
+{"level":"info","message":"Login attempt for username: kdkdkkd","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:23"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: kdkdkkd","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:23"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:23"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:21:01"}
+{"level":"info","message":"Login attempt for username: hdhdhdh","service":"gikpsmail-service","timestamp":"2026-05-09 15:21:01"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: hdhdhdh","service":"gikpsmail-service","timestamp":"2026-05-09 15:21:01"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:21:01"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
+{"level":"info","message":"Login attempt for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}

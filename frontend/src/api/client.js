@@ -21,8 +21,10 @@ apiClient.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('gikpsmail_token');
-      // Redirect to login if not already there (simplified for now)
-      window.location.href = '/login';
+      // Only redirect to login if we are NOT already on the login page
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getInbox, getSent, getEmail, updateEmailStatus, deleteEmail } from '../api/mailApi';
 import { getMe } from '../api/authApi';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { io } from 'socket.io-client';
 import { 
   HiInbox, 
   HiOutlineMail, 
@@ -11,7 +12,9 @@ import {
   HiOutlineTrash, 
   HiLogout,
   HiPlus,
-  HiPaperClip
+  HiPaperClip,
+  HiMenu,
+  HiX
 } from 'react-icons/hi';
 import './Dashboard.css';
 
@@ -21,6 +24,7 @@ const Dashboard = () => {
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [view, setView] = useState('inbox'); // 'inbox', 'sent'
   const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +32,41 @@ const Dashboard = () => {
     fetchEmails();
   }, [view]);
 
+  useEffect(() => {
+    if (!user) return;
+
+    const SOCKET_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const socket = io(SOCKET_URL);
+
+    socket.on('connect', () => {
+      socket.emit('join', user.id);
+    });
+
+    socket.on('new-email', (data) => {
+      const { type, email } = data;
+      
+      setEmails(prevEmails => {
+        // Prevent duplicates
+        if (prevEmails.find(em => em.id === email.id)) {
+          return prevEmails;
+        }
+
+        if (type === 'received' && view === 'inbox') {
+          return [email, ...prevEmails];
+        } else if (type === 'sent' && view === 'sent') {
+          return [email, ...prevEmails];
+        }
+        return prevEmails;
+      });
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, [user, view]);
+
   const fetchUserData = async () => {
+// ...
     try {
       const userData = await getMe();
       setUser(userData.data.user);
@@ -87,23 +125,32 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-layout">
+    <div className={`dashboard-layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      {/* Mobile Overlay */}
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'visible' : ''}`} 
+        onClick={() => setIsSidebarOpen(false)}
+      />
+
       {/* Sidebar */}
-      <aside className="sidebar">
+      <aside className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <h1 className="logo">GikpsMail</h1>
+          <button className="close-sidebar-button" onClick={() => setIsSidebarOpen(false)}>
+            <HiX />
+          </button>
         </div>
 
         <nav className="sidebar-nav">
           <button 
             className={`nav-item ${view === 'inbox' ? 'active' : ''}`}
-            onClick={() => setView('inbox')}
+            onClick={() => { setView('inbox'); setIsSidebarOpen(false); }}
           >
             <HiInbox className="nav-icon" /> Inbox
           </button>
           <button 
             className={`nav-item ${view === 'sent' ? 'active' : ''}`}
-            onClick={() => setView('sent')}
+            onClick={() => { setView('sent'); setIsSidebarOpen(false); }}
           >
             <HiOutlinePaperAirplane className="nav-icon" /> Sent
           </button>
@@ -134,9 +181,14 @@ const Dashboard = () => {
         {!selectedEmail ? (
           <div className="email-list-view">
             <header className="list-header">
-              <h2 className="list-title">{view === 'inbox' ? 'Inbox' : 'Sent'}</h2>
+              <div className="list-header-left">
+                <button className="menu-toggle-button" onClick={() => setIsSidebarOpen(true)}>
+                  <HiMenu />
+                </button>
+                <h2 className="list-title">{view === 'inbox' ? 'Inbox' : 'Sent'}</h2>
+              </div>
               <button className="compose-button">
-                <HiPlus /> Compose
+                <HiPlus /> <span className="compose-text">Compose</span>
               </button>
             </header>
 

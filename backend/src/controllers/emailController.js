@@ -53,6 +53,22 @@ export const sendEmail = async (req, res, next) => {
       }
     });
 
+    // Emit real-time event
+    const io = req.app.get('io');
+    if (io) {
+      // Notify the receiver
+      io.to(`user_${email.receiverId}`).emit('new-email', {
+        type: 'received',
+        email
+      });
+      
+      // Also notify the sender (for 'Sent' view updates)
+      io.to(`user_${senderId}`).emit('new-email', {
+        type: 'sent',
+        email
+      });
+    }
+
     res.status(201).json({
       status: 'success',
       data: { email }

@@ -2,6 +2,8 @@ import prisma from '../config/db.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import AppError from '../utils/errors.js';
+import logger from '../utils/logger.js';
+import { z } from 'zod';
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -9,19 +11,31 @@ const signToken = (id) => {
   });
 };
 
+const registerSchema = z.object({
+  username: z.string().min(3, 'Username must be at least 3 characters long').max(30),
+  email: z.string().email('Invalid email address'),
+  password: z.string().min(8, 'Password must be at least 8 characters long'),
+  fullName: z.string().min(1, 'Full name is required').max(100).optional(),
+});
+
+const loginSchema = z.object({
+  username: z.string().min(1, 'Username is required'),
+  password: z.string().min(1, 'Password is required'),
+});
+
 export const register = async (req, res, next) => {
   try {
-    const { username, password, email, fullName } = req.body;
-
-    if (!username || !password || !email) {
-      return next(new AppError('Please provide username, password, and email', 400));
-    }
+    logger.info(`Registration attempt for username: ${req.body.username}`);
+    
+    const validatedData = registerSchema.parse(req.body);
+    const { username, password, email, fullName } = validatedData;
 
     const existingUser = await prisma.user.findUnique({
       where: { username },
     });
 
     if (existingUser) {
+      logger.warn(`Registration failed: Username ${username} already taken`);
       return next(new AppError('Username already taken', 400));
     }
 
@@ -30,6 +44,7 @@ export const register = async (req, res, next) => {
     });
 
     if (existingEmail) {
+      logger.warn(`Registration failed: Email ${email} already in use`);
       return next(new AppError('Email already in use', 400));
     }
 
@@ -43,6 +58,8 @@ export const register = async (req, res, next) => {
         fullName,
       },
     });
+
+    logger.info(`User registered successfully: ${username} (${newUser.id})`);
 
     const token = signToken(newUser.id);
 
@@ -59,25 +76,31 @@ export const register = async (req, res, next) => {
       },
     });
   } catch (err) {
+    if (err instanceof z.ZodError) {
+      logger.warn(`Registration validation failed: ${err.errors.map(e => e.message).join(', ')}`);
+      return next(new AppError(err.errors[0].message, 400));
+    }
     next(err);
   }
 };
 
 export const login = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    logger.info(`Login attempt for username: ${req.body.username}`);
 
-    if (!username || !password) {
-      return next(new AppError('Please provide username and password', 400));
-    }
+    const validatedData = loginSchema.parse(req.body);
+    const { username, password } = validatedData;
 
     const user = await prisma.user.findUnique({
       where: { username },
     });
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
+      logger.warn(`Login failed: Incorrect credentials for username: ${username}`);
       return next(new AppError('Incorrect username or password', 401));
     }
+
+    logger.info(`User logged in successfully: ${username} (${user.id})`);
 
     const token = signToken(user.id);
 
@@ -94,6 +117,10 @@ export const login = async (req, res, next) => {
       },
     });
   } catch (err) {
+    if (err instanceof z.ZodError) {
+      logger.warn(`Login validation failed: ${err.errors.map(e => e.message).join(', ')}`);
+      return next(new AppError(err.errors[0].message, 400));
+    }
     next(err);
   }
 };
@@ -105,6 +132,7 @@ export const getMe = async (req, res, next) => {
     });
 
     if (!user) {
+      logger.error(`GetMe failed: User with ID ${req.user.id} not found`);
       return next(new AppError('No user found with that ID', 404));
     }
 

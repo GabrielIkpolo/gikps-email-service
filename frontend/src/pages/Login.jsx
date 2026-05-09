@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../api/authApi';
+import { toast } from 'react-hot-toast';
 import './Login.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -13,17 +13,39 @@ const Login = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
+  const validate = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!credentials.username) {
+      toast.error('Username is required');
+      return false;
+    }
+    if (!credentials.password) {
+      toast.error('Password is required');
+      return false;
+    }
+    // If it looks like an email, validate it
+    if (credentials.username.includes('@') && !emailRegex.test(credentials.username)) {
+      toast.error('Please enter a valid email address');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    if (!validate()) return;
+
     setLoading(true);
 
     try {
       const response = await login(credentials);
       localStorage.setItem('gikpsmail_token', response.token);
+      toast.success('Welcome back!');
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.error || 'Login failed. Please try again.');
+      const errorMessage = err.response?.data?.error || 'Login failed. Please check your credentials.';
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -32,18 +54,19 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Welcome to GikpsMail</h2>
-        <p className="login-subtitle">Please enter your credentials to login</p>
-
-        {error && <div className="error-message">{error}</div>}
+        <div className="login-header">
+          <h2 className="login-title">GikpsMail</h2>
+          <p className="login-subtitle">Welcome back! Please enter your details.</p>
+        </div>
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Username or Email</label>
             <input
               type="text"
               id="username"
               name="username"
+              placeholder="Enter your username"
               value={credentials.username}
               onChange={handleChange}
               required
@@ -55,19 +78,24 @@ const Login = () => {
               type="password"
               id="password"
               name="password"
+              placeholder="••••••••"
               value={credentials.password}
               onChange={handleChange}
               required
             />
           </div>
           <button type="submit" className="login-button" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? (
+              <span className="loading-text">Signing in...</span>
+            ) : (
+              'Sign In'
+            )}
           </button>
         </form>
 
-        <p className="login-footer">
-          Don't have an account? <Link to="/register">Register here</Link>
-        </p>
+        <div className="login-footer">
+          <p>Don't have an account? <Link to="/register">Create one now</Link></p>
+        </div>
       </div>
     </div>
   );
