@@ -35,13 +35,12 @@ export const sendEmail = async (req, res, next) => {
 
     const email = await prisma.email.create({
       data: {
-        to: to, // In a real system, this would be a User ID or a validated email address
         subject,
         text,
         html,
-        senderId,
-        // For now, we'll find the receiver by email address (simplified)
-        // In production, we'd resolve the email to a User ID
+        sender: {
+          connect: { id: senderId }
+        },
         receiver: {
           connect: { email: to }
         },
