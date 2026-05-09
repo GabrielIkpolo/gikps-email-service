@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getInbox, getSent, getEmail, updateEmailStatus, deleteEmail } from '../api/mailApi';
 import { getMe } from '../api/authApi';
+import LoadingSpinner from '../components/LoadingSpinner';
 import { 
   HiInbox, 
   HiOutlineMail, 
@@ -140,7 +141,7 @@ const Dashboard = () => {
             </header>
 
             {loading ? (
-              <div className="loading">Loading...</div>
+              <LoadingSpinner message="Fetching emails..." />
             ) : (
               <div className="email-list">
                 {emails.length === 0 ? (

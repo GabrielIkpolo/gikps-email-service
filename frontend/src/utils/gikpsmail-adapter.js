@@ -56,15 +56,20 @@ class HTTPTransporter {
     } = mailOptions;
 
     // Validate required fields
-    if (!to) throw new Error('Recipient (to) is required');
-    if (!subject) throw new Error('Subject is required');
+    if (!to) {
+      throw new Error('Recipient (to) is required');
+    }
+    if (!subject) {
+      throw new Error('Subject is required');
+    }
 
-    // Parse from address (supports "Name <email@example.com>" or "email@example.com")
+    // Parse from address
     let fromEmail = this.fromAddress;
     let fromName = this.fromName;
 
     if (from) {
       if (typeof from === 'string') {
+        // Parse "Name <email@example.com>" format
         const match = from.match(/(?:"?([^"]*)"?\s)?<?([^\s>]+@[^\s>]+)>?/);
         if (match) {
           fromName = match[1] || fromName;
@@ -79,8 +84,6 @@ class HTTPTransporter {
     }
 
     // Prepare payload
-    // Note: In a real Nodemailer implementation, attachments are handled differently.
-    // Here we convert them to a format our API expects.
     const payload = {
       to: typeof to === 'string' ? to : (to.address || to.email),
       subject,
@@ -90,18 +93,17 @@ class HTTPTransporter {
       fromEmail,
     };
 
-    if (cc) payload.cc = Array.isArray(cc) ? cc : [cc];
-    if (bcc) payload.bcc = Array.isArray(bcc) ? bcc : [bcc];
-    
-    // Handle attachments if present
+    if (cc) {
+      payload.cc = Array.isArray(cc) ? cc : [cc];
+    }
+    if (bcc) {
+      payload.bcc = Array.isArray(bcc) ? bcc : [bcc];
+    }
+
     if (attachments && attachments.length > 0) {
-      // For the adapter, we assume the caller provides file paths or buffers 
-      // that we'll need to handle. For this HTTP implementation, we suggest 
-      // the caller uses multipart/form-data or we handle base64.
-      // To keep this simple and compatible with the existing API:
       payload.attachments = attachments.map(att => ({
         filename: att.filename || 'attachment',
-        content: att.content // Can be base64 string
+        content: att.content // Expecting base64 string
       }));
     }
 
@@ -135,8 +137,10 @@ class HTTPTransporter {
    */
   async verify() {
     try {
-      const response = await axios.get(`${this.apiUrl}/api/auth/me`, {
-        headers: { 'X-API-Key': this.apiKey },
+      const response = await axios.get(`${this.apiUrl}/api/auth/verify`, {
+        headers: {
+          'X-API-Key': this.apiKey,
+        },
       });
       return response.status === 200;
     } catch {
