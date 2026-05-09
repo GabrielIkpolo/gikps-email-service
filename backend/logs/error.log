@@ -5,3 +5,21 @@
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:15:23"}
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:21:01"}
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:13"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:34"}
+{"level":"error","message":"FAIL 400: Username already taken","service":"gikpsmail-service","timestamp":"2026-05-09 15:26:27"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:31"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:41"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:47"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:47"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:10"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:25"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:25"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}

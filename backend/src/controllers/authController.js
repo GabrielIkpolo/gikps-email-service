@@ -23,6 +23,31 @@ const loginSchema = z.object({
   password: z.string().min(1, 'Password is required'),
 });
 
+export const checkUsername = async (req, res, next) => {
+  try {
+    const { username } = req.params;
+    const normalizedUsername = username.toLowerCase();
+
+    const user = await prisma.user.findUnique({
+      where: { username: normalizedUsername },
+    });
+
+    if (user) {
+      return res.status(200).json({
+        status: 'fail',
+        data: { available: false },
+      });
+    }
+
+    res.status(200).json({
+      status: 'success',
+      data: { available: true },
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const register = async (req, res, next) => {
   try {
     logger.info(`Registration attempt for username: ${req.body.username}`);
@@ -30,21 +55,24 @@ export const register = async (req, res, next) => {
     const validatedData = registerSchema.parse(req.body);
     const { username, password, email, fullName } = validatedData;
 
+    const normalizedUsername = username.toLowerCase();
+    const normalizedEmail = email.toLowerCase();
+
     const existingUser = await prisma.user.findUnique({
-      where: { username },
+      where: { username: normalizedUsername },
     });
 
     if (existingUser) {
-      logger.warn(`Registration failed: Username ${username} already taken`);
+      logger.warn(`Registration failed: Username ${normalizedUsername} already taken`);
       return next(new AppError('Username already taken', 400));
     }
 
     const existingEmail = await prisma.user.findUnique({
-      where: { email },
+      where: { email: normalizedEmail },
     });
 
     if (existingEmail) {
-      logger.warn(`Registration failed: Email ${email} already in use`);
+      logger.warn(`Registration failed: Email ${normalizedEmail} already in use`);
       return next(new AppError('Email already in use', 400));
     }
 
@@ -52,14 +80,14 @@ export const register = async (req, res, next) => {
 
     const newUser = await prisma.user.create({
       data: {
-        username,
-        email,
+        username: normalizedUsername,
+        email: normalizedEmail,
         password: hashedPassword,
         fullName,
       },
     });
 
-    logger.info(`User registered successfully: ${username} (${newUser.id})`);
+    logger.info(`User registered successfully: ${normalizedUsername} (${newUser.id})`);
 
     const token = signToken(newUser.id);
 
@@ -86,21 +114,26 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   try {
-    logger.info(`Login attempt for username: ${req.body.username}`);
+    logger.info(`Login attempt for identifier: ${req.body.username}`);
 
     const validatedData = loginSchema.parse(req.body);
     const { username, password } = validatedData;
 
-    const user = await prisma.user.findUnique({
-      where: { username },
+    const user = await prisma.user.findFirst({
+      where: {
+        OR: [
+          { username: username.toLowerCase() },
+          { email: username.toLowerCase() },
+        ],
+      },
     });
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      logger.warn(`Login failed: Incorrect credentials for username: ${username}`);
+      logger.warn(`Login failed: Incorrect credentials for identifier: ${username}`);
       return next(new AppError('Incorrect username or password', 401));
     }
 
-    logger.info(`User logged in successfully: ${username} (${user.id})`);
+    logger.info(`User logged in successfully: ${user.username} (${user.id})`);
 
     const token = signToken(user.id);
 

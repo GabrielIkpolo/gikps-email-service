@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { register } from '../api/authApi';
+import { register, checkUsername } from '../api/authApi';
 import { toast } from 'react-hot-toast';
 import './Register.css';
 
@@ -11,11 +11,48 @@ const Register = () => {
     email: '',
     fullName: ''
   });
+  const [usernameStatus, setUsernameStatus] = useState('idle'); // 'idle' | 'checking' | 'available' | 'taken'
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const debounceTimer = useRef(null);
 
   const handleChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === 'username') {
+      const normalizedUsername = value.toLowerCase();
+      setUserData(prev => ({
+        ...prev,
+        username: normalizedUsername,
+        email: normalizedUsername ? `${normalizedUsername}@gikpsmail.com` : ''
+      }));
+
+      // Debounce availability check
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current);
+      }
+
+      if (normalizedUsername.length >= 3) {
+        setUsernameStatus('checking');
+        debounceTimer.current = setTimeout(async () => {
+          try {
+            const { data } = await checkUsername(normalizedUsername);
+            if (data.available) {
+              setUsernameStatus('available');
+            } else {
+              setUsernameStatus('taken');
+            }
+          } catch (err) {
+            console.error('Error checking username availability:', err);
+            setUsernameStatus('idle');
+          }
+        }, 500);
+      } else {
+        setUsernameStatus('idle');
+      }
+    } else {
+      setUserData({ ...userData, [name]: value });
+    }
   };
 
   const validate = () => {
@@ -27,6 +64,10 @@ const Register = () => {
     }
     if (!userData.username.trim()) {
       toast.error('Username is required');
+      return false;
+    }
+    if (usernameStatus === 'taken') {
+      toast.error('Username is already taken');
       return false;
     }
     if (!userData.email || !emailRegex.test(userData.email)) {
@@ -90,6 +131,14 @@ const Register = () => {
               onChange={handleChange}
               required
             />
+            <div className={`username-hint ${usernameStatus}`}>
+              {usernameStatus === 'checking' && <span>Checking availability...</span>}
+              {usernameStatus === 'available' && <span>✓ Username is available!</span>}
+              {usernameStatus === 'taken' && <span>✗ Username is already taken</span>}
+              {userData.username && usernameStatus === 'idle' && userData.username.length < 3 && (
+                <span>Username must be at least 3 characters</span>
+              )}
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
@@ -102,6 +151,11 @@ const Register = () => {
               onChange={handleChange}
               required
             />
+            {userData.username && (
+               <div className="email-hint">
+                 Suggested: {userData.username}@gikpsmail.com
+               </div>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
@@ -115,7 +169,7 @@ const Register = () => {
               required
             />
           </div>
-          <button type="submit" className="register-button" disabled={loading}>
+          <button type="submit" className="register-button" disabled={loading || usernameStatus === 'checking'}>
             {loading ? (
               <span className="loading-text">Creating account...</span>
             ) : (

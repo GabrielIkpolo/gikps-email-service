@@ -29,3 +29,142 @@
 {"level":"info","message":"Login attempt for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
 {"level":"warn","message":"Login failed: Incorrect credentials for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:24:00"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:13"}
+{"level":"info","message":"Login attempt for username: hdhdjdj","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:13"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: hdhdjdj","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:13"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:13"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:34"}
+{"level":"info","message":"Login attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:34"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:34"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:25:34"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-09 15:26:27"}
+{"level":"info","message":"Registration attempt for username: Gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:26:27"}
+{"level":"warn","message":"Registration failed: Username Gab already taken","service":"gikpsmail-service","timestamp":"2026-05-09 15:26:27"}
+{"level":"error","message":"FAIL 400: Username already taken","service":"gikpsmail-service","timestamp":"2026-05-09 15:26:27"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:11"}
+{"level":"info","message":"Registration attempt for username: Gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:11"}
+{"level":"info","message":"User registered successfully: Gab (69ff444097861ad962736d84)","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:12"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:31"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:31"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:31"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:31"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:41"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:41"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:41"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:41"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:47"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:47"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:47"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:27:47"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 15:42:24"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 15:45:09"}
+{"level":"info","message":"GET /api/auth/check-username/gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:48:40"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:19"}
+{"level":"info","message":"Registration attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:19"}
+{"level":"info","message":"User registered successfully: gab (69ff496f23118a98e179a20f)","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:19"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"Login attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"User logged in successfully: gab (69ff496f23118a98e179a20f)","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:36"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:47"}
+{"level":"info","message":"Login attempt for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:47"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: abc@gmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:47"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:49:47"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:10"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:10"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:10"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:10"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:25"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:25"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:25"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 15:50:25"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:25"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:25"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:25"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:25"}
+{"level":"info","message":"GET /api/auth/check-username/gab","service":"gikpsmail-service","timestamp":"2026-05-09 16:00:52"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:03"}
+{"level":"info","message":"Registration attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:03"}
+{"level":"info","message":"User registered successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:03"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:23"}
+{"level":"info","message":"Login attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:23"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:23"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:24"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"Login attempt for username: gab","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}
+{"level":"info","message":"Login attempt for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}
+{"level":"warn","message":"Login failed: Incorrect credentials for username: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 16:08:46"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:10"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"New client connected: BZO2rEzuiKjlRwqNAAAB","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"Socket BZO2rEzuiKjlRwqNAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:42"}
+{"level":"info","message":"Client disconnected: BZO2rEzuiKjlRwqNAAAB","service":"gikpsmail-service","timestamp":"2026-05-09 16:09:52"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"New client connected: l356-l9V-DaLtKoYAAAD","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"Client disconnected: l356-l9V-DaLtKoYAAAD","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"New client connected: BctgoauaKm8czhBkAAAF","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"Socket BctgoauaKm8czhBkAAAF joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:18"}
+{"level":"info","message":"Client disconnected: BctgoauaKm8czhBkAAAF","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:31"}
+{"level":"info","message":"New client connected: iKr9WW6I4MUpmP2iAAAH","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:31"}
+{"level":"info","message":"GET /api/mail/sent","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:31"}
+{"level":"info","message":"Socket iKr9WW6I4MUpmP2iAAAH joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:31"}
+{"level":"info","message":"Client disconnected: iKr9WW6I4MUpmP2iAAAH","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:32"}
+{"level":"info","message":"New client connected: v7oJDd1PgAQ2AW5dAAAJ","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:32"}
+{"level":"info","message":"Socket v7oJDd1PgAQ2AW5dAAAJ joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:32"}
+{"level":"info","message":"Client disconnected: v7oJDd1PgAQ2AW5dAAAJ","service":"gikpsmail-service","timestamp":"2026-05-09 16:10:40"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"Login attempt for identifier: gab","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"New client connected: FrtzaRniaMQ0jgsjAAAL","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"Socket FrtzaRniaMQ0jgsjAAAL joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:03"}
+{"level":"info","message":"Client disconnected: FrtzaRniaMQ0jgsjAAAL","service":"gikpsmail-service","timestamp":"2026-05-09 16:11:22"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"New client connected: itvbj6nCOrVvCu4mAAAN","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}
+{"level":"info","message":"Socket itvbj6nCOrVvCu4mAAAN joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-09 16:12:10"}

@@ -138,3 +138,26 @@
 .register-footer a:hover {
   text-decoration: underline;
 }
+
+.username-hint {
+  font-size: 0.75rem;
+  min-height: 1rem;
+}
+
+.username-hint.available {
+  color: var(--success-color);
+}
+
+.username-hint.taken {
+  color: var(--error-color);
+}
+
+.username-hint.checking {
+  color: var(--text-muted);
+}
+
+.email-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
