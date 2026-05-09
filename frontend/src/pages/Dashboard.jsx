@@ -16,6 +16,7 @@ import {
   HiMenu,
   HiX
 } from 'react-icons/hi';
+import ComposeModal from '../components/ComposeModal';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -25,7 +26,28 @@ const Dashboard = () => {
   const [view, setView] = useState('inbox'); // 'inbox', 'sent'
   const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isComposeModalOpen, setIsComposeModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  const toggleSidebarOnMobile = () => {
+    if (window.innerWidth <= 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  const handleNavClick = (newView) => {
+    setView(newView);
+    toggleSidebarOnMobile();
+  };
+
+  const handleComposeOpen = () => {
+    setIsComposeModalOpen(true);
+    toggleSidebarOnMobile();
+  };
+
+  const handleComposeSuccess = () => {
+    fetchEmails();
+  };
 
   useEffect(() => {
     fetchUserData();
@@ -144,13 +166,13 @@ const Dashboard = () => {
         <nav className="sidebar-nav">
           <button 
             className={`nav-item ${view === 'inbox' ? 'active' : ''}`}
-            onClick={() => { setView('inbox'); setIsSidebarOpen(false); }}
+            onClick={() => handleNavClick('inbox')}
           >
             <HiInbox className="nav-icon" /> Inbox
           </button>
           <button 
             className={`nav-item ${view === 'sent' ? 'active' : ''}`}
-            onClick={() => { setView('sent'); setIsSidebarOpen(false); }}
+            onClick={() => handleNavClick('sent')}
           >
             <HiOutlinePaperAirplane className="nav-icon" /> Sent
           </button>
@@ -187,7 +209,10 @@ const Dashboard = () => {
                 </button>
                 <h2 className="list-title">{view === 'inbox' ? 'Inbox' : 'Sent'}</h2>
               </div>
-              <button className="compose-button">
+              <button 
+                className="compose-button"
+                onClick={handleComposeOpen}
+              >
                 <HiPlus /> <span className="compose-text">Compose</span>
               </button>
             </header>
@@ -290,9 +315,14 @@ const Dashboard = () => {
             </div>
           </div>
         )}
-      </main>
-    </div>
-  );
-};
+        </main>
+        <ComposeModal 
+          isOpen={isComposeModalOpen} 
+          onClose={() => setIsComposeModalOpen(false)} 
+          onSendSuccess={handleComposeSuccess}
+        />
+      </div>
+    );
+  };
 
 export default Dashboard;
