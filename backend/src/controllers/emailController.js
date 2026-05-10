@@ -88,7 +88,17 @@ export const getInbox = async (req, res, next) => {
     const emails = await prisma.email.findMany({
       where: { receiverId: userId },
       orderBy: { createdAt: 'desc' },
-      include: { attachments: true }
+      include: { 
+        attachments: true,
+        sender: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        }
+      }
     });
 
     res.status(200).json({
@@ -107,7 +117,17 @@ export const getSent = async (req, res, next) => {
     const emails = await prisma.email.findMany({
       where: { senderId: userId },
       orderBy: { createdAt: 'desc' },
-      include: { attachments: true }
+      include: { 
+        attachments: true,
+        receiver: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        }
+      }
     });
 
     res.status(200).json({
@@ -132,7 +152,25 @@ export const getEmail = async (req, res, next) => {
           { id, receiverId: userId }
         ]
       },
-      include: { attachments: true }
+      include: { 
+        attachments: true,
+        sender: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        },
+        receiver: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        }
+      }
     });
 
     if (!email) {

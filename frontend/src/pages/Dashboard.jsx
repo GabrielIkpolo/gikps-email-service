@@ -140,7 +140,9 @@ const Dashboard = () => {
   };
 
   const handleToggleStar = async (e, id) => {
-    e.stopPropagation();
+    if (e && typeof e.stopPropagation === 'function') {
+      e.stopPropagation();
+    }
     const currentStatus = emails.find(em => em.id === id)?.isStarred;
     await updateEmailStatus(id, { isStarred: !currentStatus });
     fetchEmails();
@@ -246,8 +248,7 @@ const Dashboard = () => {
                       </div>
                       <div className="email-item-main">
                         <div className="email-sender">
-                          {/* In a real app, we'd resolve the sender name from the ID */}
-                          {email.senderId === user?.id ? 'Me' : 'Someone'}
+                          {email.sender?.fullName || email.sender?.username || (email.senderId === user?.id ? 'Me' : 'Someone')}
                         </div>
                         <div className="email-subject">{email.subject}</div>
                         <div className="email-preview">{email.text?.substring(0, 80)}...</div>
@@ -278,7 +279,10 @@ const Dashboard = () => {
                 <h1 className="email-subject">{selectedEmail.subject}</h1>
                 <div className="email-author">
                   <span className="author-name">From: </span>
-                  <span className="author-email">Someone</span>
+                  <span className="author-email">
+                    {selectedEmail.sender?.fullName || selectedEmail.sender?.username || (selectedEmail.senderId === user?.id ? 'Me' : 'Someone')}
+                    ({selectedEmail.sender?.email || selectedEmail.senderId})
+                  </span>
                 </div>
                 <div className="email-date">
                   {new Date(selectedEmail.createdAt).toLocaleString()}
