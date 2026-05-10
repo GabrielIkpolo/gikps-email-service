@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm install pm2 --save-dev && npx prisma generate && npx prisma db push && npx pm2 stop all && npx pm2 start src/index.js -i max && npx pm2 logs"
   },
   "keywords": [],
   "author": "",
