@@ -963,3 +963,6 @@
 {"level":"info","message":"New client connected: xRN2VzTwEMIzdtQYAAAH","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
 {"level":"info","message":"Socket xRN2VzTwEMIzdtQYAAAH joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
 {"level":"info","message":"Client disconnected: xRN2VzTwEMIzdtQYAAAH","service":"gikpsmail-service","timestamp":"2026-05-10 17:35:47"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:44"}
+{"level":"info","message":"New client connected: ASabEipMq2FOMcKlAAAB","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:45"}
+{"level":"info","message":"Socket ASabEipMq2FOMcKlAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:45"}
