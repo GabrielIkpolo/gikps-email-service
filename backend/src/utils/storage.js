@@ -14,6 +14,7 @@ cloudinary.config({
 });
 
 const UPLOAD_DIR = path.join(process.cwd(), 'uploads');
+const APP_URL = process.env.APP_URL || 'http://localhost:3001';
 
 // Ensure local upload directory exists
 if (process.env.NODE_ENV !== 'production' && !fs.existsSync(UPLOAD_DIR)) {
@@ -55,7 +56,7 @@ export const uploadFile = async (file) => {
     fs.writeFileSync(filePath, file.buffer);
 
     return {
-      url: `/uploads/${filename}`,
+      url: `${APP_URL}/uploads/${filename}`,
       filename: file.originalname,
       mimeType: file.mimetype,
       size: file.size,

@@ -1,0 +1,3 @@
+import prisma from './backend/prisma/schema.prisma'; // This won't work like this
+import { deleteEmail } from './backend/src/controllers/emailController.js';
+// ...

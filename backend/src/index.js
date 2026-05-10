@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
@@ -14,6 +15,9 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
+// Serve static files (for attachments in development)
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+
 // Initialize Socket.io
 const io = new Server(server, {
   cors: {
@@ -21,9 +25,6 @@ const io = new Server(server, {
     methods: ["GET", "POST"]
   }
 });
-
-// Attach io to app so it can be accessed in controllers via req.app.get('io')
-app.set('io', io);
 
 app.use(cors());
 app.use(express.json());
@@ -65,7 +66,10 @@ app.use((err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
-  logger.error(`${err.status.toUpperCase()} ${err.statusCode}: ${err.message}`);
+  // Use logger if available, otherwise fallback to console
+  const log = (typeof logger !== 'undefined') ? logger : console;
+  
+  log.error(`${err.status.toUpperCase()} ${err.statusCode}: ${err.message}`);
 
   res.status(err.statusCode).json({
     status: err.status,

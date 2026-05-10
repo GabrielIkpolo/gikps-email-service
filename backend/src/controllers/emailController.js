@@ -1,6 +1,7 @@
 import prisma from '../config/db.js';
 import AppError from '../utils/errors.js';
 import { uploadFile } from '../utils/storage.js';
+import logger from '../utils/logger.js';
 
 export const sendEmail = async (req, res, next) => {
   try {
@@ -49,7 +50,23 @@ export const sendEmail = async (req, res, next) => {
         }
       },
       include: {
-        attachments: true
+        attachments: true,
+        sender: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        },
+        receiver: {
+          select: {
+            id: true,
+            username: true,
+            fullName: true,
+            email: true
+          }
+        }
       }
     });
 
@@ -226,6 +243,8 @@ export const deleteEmail = async (req, res, next) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
+    const log = (typeof logger !== 'undefined') ? logger : console;
+    log.info(`Attempting to delete email with ID: ${id} by user: ${userId}`);
 
     const email = await prisma.email.findFirst({
       where: {
@@ -233,22 +252,34 @@ export const deleteEmail = async (req, res, next) => {
           { id, senderId: userId },
           { id, receiverId: userId }
         ]
-      }
+      },
+      include: { attachments: true }
     });
 
     if (!email) {
+      log.warn(`Delete failed: Email with ID ${id} not found or unauthorized for user ${userId}`);
       return next(new AppError('No email found with that ID', 404));
+    }
+
+    // Manually delete attachments first to avoid Prisma relation errors in MongoDB
+    if (email.attachments && email.attachments.length > 0) {
+      await prisma.attachment.deleteMany({
+        where: { emailId: id }
+      });
     }
 
     await prisma.email.delete({
       where: { id }
     });
 
+    log.info(`Email with ID ${id} deleted successfully by user ${userId}`);
     res.status(204).json({
       status: 'success',
       data: null
     });
   } catch (err) {
+    const log = (typeof logger !== 'undefined') ? logger : console;
+    log.error(`Error deleting email ${req.params.id}: ${err.message}`);
     next(err);
   }
 };

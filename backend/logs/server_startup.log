@@ -1,0 +1,52 @@
+
+> backend@1.0.0 dev /home/angelis/NodeProjects/custom-email-service/backend
+> nodemon src/index.js
+
+[33m[nodemon] 3.1.11[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node src/index.js`[39m
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+◇ injected env (0) from .env // tip: ⌘ override existing { override: true }
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at file:///home/angelis/NodeProjects/custom-email-service/backend/src/index.js:81:8
+    at ModuleJob.run (node:[32minfo[39m: DELETE /api/mail/6a007ea46f0b2badbe3f35bc {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:09"}
+[32minfo[39m: Attempting to delete email with ID: 6a007ea46f0b2badbe3f35bc by user: 69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:09"}
+[32minfo[39m: Email with ID 6a007ea46f0b2badbe3f35bc deleted successfully by user 69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:09"}
+[32minfo[39m: GET /api/mail/inbox {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:09"}
+[32minfo[39m: GET /api/auth/me {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:19"}
+[32minfo[39m: GET /api/auth/me {"service":"gikpsmail-service","timestamp":"2026-05-10 14:30:19"}
+[32minfo[39m: DELETE /api/mail/6a007b5a9831c14022743367 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:01"}
+[32minfo[39m: Attempting to delete email with ID: 6a007b5a9831c14022743367 by user: 69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:01"}
+[32minfo[39m: Email with ID 6a007b5a9831c14022743367 deleted successfully by user 69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:01"}
+[32minfo[39m: GET /api/mail/inbox {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:01"}
+[32minfo[39m: Client disconnected: r7JzoI6dX8mQr-aBAAAB {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: New client connected: M2pljzlM0zodaKS1AAAD {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: GET /api/auth/me {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: GET /api/mail/sent {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: Socket M2pljzlM0zodaKS1AAAD joined room: user_69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: Client disconnected: M2pljzlM0zodaKS1AAAD {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: New client connected: Jmc_hbcSEBWn5s57AAAF {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: Socket Jmc_hbcSEBWn5s57AAAF joined room: user_69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:06"}
+[32minfo[39m: Client disconnected: Jmc_hbcSEBWn5s57AAAF {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: GET /api/auth/me {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: New client connected: vOt3A2oRCQpqJ9SCAAAH {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: GET /api/mail/inbox {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: Client disconnected: vOt3A2oRCQpqJ9SCAAAH {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: New client connected: QMWAerYh4JxcD0ODAAAJ {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: Socket QMWAerYh4JxcD0ODAAAJ joined room: user_69ff4c2f23118a98e179a210 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:31:09"}
+[32minfo[39m: POST /api/mail/send {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:19"}
+[32minfo[39m: GET /api/mail/inbox {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:19"}
+[32minfo[39m: PATCH /api/mail/6a0088e31be3167edaba6205 {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:22"}
+[32minfo[39m: GET /api/mail/inbox {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:22"}
+[32minfo[39m: GET /favicon.ico {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
+[33mwarn[39m: Can't find /favicon.ico on this server! {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
+[31merror[39m: FAIL 404: Can't find /favicon.ico on this server! {"service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}

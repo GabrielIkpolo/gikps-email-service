@@ -42,5 +42,5 @@ model Attachment {
   mimeType String
   size     Int
   emailId  String @db.ObjectId
-  email    Email  @relation(fields: [emailId], references: [id])
+  email    Email  @relation(fields: [emailId], references: [id], onDelete: Cascade)
 }

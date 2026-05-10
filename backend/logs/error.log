@@ -23,3 +23,19 @@
 {"level":"error","message":"ERROR 500: Cannot read properties of undefined (reading 'id')","service":"gikpsmail-service","timestamp":"2026-05-09 16:01:35"}
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:25"}
 {"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-09 16:03:50"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.email.delete()` invocation:\n\n\nThe change you are trying to make would violate the required relation 'AttachmentToEmail' between the `Attachment` and `Email` models.","service":"gikpsmail-service","timestamp":"2026-05-10 13:46:20"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.email.delete()` invocation:\n\n\nThe change you are trying to make would violate the required relation 'AttachmentToEmail' between the `Attachment` and `Email` models.","service":"gikpsmail-service","timestamp":"2026-05-10 13:46:28"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.email.delete()` invocation:\n\n\nThe change you are trying to make would violate the required relation 'AttachmentToEmail' between the `Attachment` and `Email` models.","service":"gikpsmail-service","timestamp":"2026-05-10 13:47:05"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 13:57:43"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 13:58:08"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 13:58:21"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 13:58:26"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:04:04"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:05:44"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:06:06"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-05-10 14:08:45"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-05-10 14:09:06"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:11:22"}
+{"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:13:55"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-05-10 14:19:37"}
+{"level":"error","message":"FAIL 404: Can't find /favicon.ico on this server!","service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}

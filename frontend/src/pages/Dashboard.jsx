@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import { getInbox, getSent, getEmail, updateEmailStatus, deleteEmail } from '../api/mailApi';
 import { getMe } from '../api/authApi';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -69,6 +70,10 @@ const Dashboard = () => {
     socket.on('new-email', (data) => {
       const { type, email } = data;
       
+      if (type === 'received') {
+        toast.success(`New email from ${email.sender?.fullName || email.sender?.username || 'Someone'}`);
+      }
+
       setEmails(prevEmails => {
         // Prevent duplicates
         if (prevEmails.find(em => em.id === email.id)) {
@@ -131,13 +136,21 @@ const Dashboard = () => {
   };
 
   const handleDeleteEmail = async (id, e) => {
-    e.stopPropagation();
+    if (e && typeof e.stopPropagation === 'function') {
+      e.stopPropagation();
+    }
     if (window.confirm('Are you sure you want to delete this email?')) {
-      await deleteEmail(id);
-      if (selectedEmail && selectedEmail.id === id) {
-        setSelectedEmail(null);
+      try {
+        await deleteEmail(id);
+        if (selectedEmail && selectedEmail.id === id) {
+          setSelectedEmail(null);
+        }
+        fetchEmails();
+        toast.success('Email deleted successfully');
+      } catch (err) {
+        console.error('Error deleting email:', err);
+        toast.error(err.response?.data?.error || 'Failed to delete email');
       }
-      fetchEmails();
     }
   };
 
