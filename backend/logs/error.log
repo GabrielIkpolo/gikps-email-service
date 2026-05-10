@@ -39,3 +39,4 @@
 {"level":"error","message":"ERROR 500: logger is not defined","service":"gikpsmail-service","timestamp":"2026-05-10 14:13:55"}
 {"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-05-10 14:19:37"}
 {"level":"error","message":"FAIL 404: Can't find /favicon.ico on this server!","service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
+{"level":"error","message":"FAIL 404: Recipient email address not found in GikpsMail","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:28"}

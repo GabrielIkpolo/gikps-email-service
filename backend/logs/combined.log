@@ -750,3 +750,21 @@
 {"level":"info","message":"GET /favicon.ico","service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
 {"level":"warn","message":"Can't find /favicon.ico on this server!","service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
 {"level":"error","message":"FAIL 404: Can't find /favicon.ico on this server!","service":"gikpsmail-service","timestamp":"2026-05-10 14:32:24"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"Registration attempt for username: tester","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"User registered successfully: tester (6a0089d31be3167edaba6207)","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"Login attempt for identifier: tester","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"User logged in successfully: tester (6a0089d31be3167edaba6207)","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:19"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:28"}
+{"level":"error","message":"FAIL 404: Recipient email address not found in GikpsMail","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:28"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:33"}
+{"level":"info","message":"Registration attempt for username: someone","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:33"}
+{"level":"info","message":"User registered successfully: someone (6a0089e11be3167edaba6208)","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:33"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:39"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:45"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-10 14:36:53"}
+{"level":"info","message":"DELETE /api/mail/6a0089e71be3167edaba6209","service":"gikpsmail-service","timestamp":"2026-05-10 14:37:01"}
+{"level":"info","message":"Attempting to delete email with ID: 6a0089e71be3167edaba6209 by user: 6a0089e11be3167edaba6208","service":"gikpsmail-service","timestamp":"2026-05-10 14:37:01"}
+{"level":"info","message":"Email with ID 6a0089e71be3167edaba6209 deleted successfully by user 6a0089e11be3167edaba6208","service":"gikpsmail-service","timestamp":"2026-05-10 14:37:01"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-05-10 14:37:08"}
