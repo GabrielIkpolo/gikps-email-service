@@ -1,6 +1,6 @@
 import prisma from '../config/db.js';
 import AppError from '../utils/errors.js';
-import { uploadFile } from '../utils/storage.js';
+import { uploadFile, deleteFile } from '../utils/storage.js';
 import logger from '../utils/logger.js';
 
 export const sendEmail = async (req, res, next) => {
@@ -263,6 +263,18 @@ export const deleteEmail = async (req, res, next) => {
 
     // Manually delete attachments first to avoid Prisma relation errors in MongoDB
     if (email.attachments && email.attachments.length > 0) {
+      // First, delete the actual files
+      for (const attachment of email.attachments) {
+        try {
+          await deleteFile(attachment);
+        } catch (fileErr) {
+          // If file deletion fails, we still want to continue and delete from DB
+          // but we should log it.
+          log.error(`Failed to delete attachment file ${attachment.filename}: ${fileErr.message}`);
+        }
+      }
+
+      // Then, delete the attachment records from the database
       await prisma.attachment.deleteMany({
         where: { emailId: id }
       });

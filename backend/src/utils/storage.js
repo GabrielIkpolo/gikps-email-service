@@ -42,7 +42,7 @@ export const uploadFile = async (file) => {
           if (error) return reject(error);
           resolve({
             url: result.secure_url,
-            filename: file.originalname,
+            filename: fileId,
             mimeType: file.mimetype,
             size: file.size,
           });
@@ -57,13 +57,41 @@ export const uploadFile = async (file) => {
 
     return {
       url: `${APP_URL}/uploads/${filename}`,
-      filename: file.originalname,
+      filename: filename,
       mimeType: file.mimetype,
       size: file.size,
     };
   }
 };
 
+/**
+ * Deletes a file from either Cloudinary (production) or local filesystem (development)
+ * @param {Object} attachment - The attachment object from the database
+ * @returns {Promise<void>}
+ */
+export const deleteFile = async (attachment) => {
+  const { filename } = attachment;
+
+  if (process.env.NODE_ENV === 'production') {
+    // Cloudinary deletion
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.destroy(filename, (error, result) => {
+        if (error) return reject(error);
+        resolve(result);
+      });
+    });
+  } else {
+    // Local deletion
+    const filePath = path.join(UPLOAD_DIR, filename);
+    try {
+      await fs.promises.unlink(filePath);
+    } catch (err) {
+      if (err.code !== 'ENOENT') throw err;
+    }
+  }
+};
+
 export default {
   uploadFile,
+  deleteFile,
 };
