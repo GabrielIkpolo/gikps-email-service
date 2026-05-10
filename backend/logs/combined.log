@@ -948,3 +948,18 @@
 {"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-10 17:03:47"}
 {"level":"info","message":"New client connected: tP4FhkMtMjH7RvaAAAAB","service":"gikpsmail-service","timestamp":"2026-05-10 17:03:48"}
 {"level":"info","message":"Socket tP4FhkMtMjH7RvaAAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:03:48"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"New client connected: 7Fpmxh5noYbAg_4sAAAD","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"Socket 7Fpmxh5noYbAg_4sAAAD joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:38"}
+{"level":"info","message":"Client disconnected: 7Fpmxh5noYbAg_4sAAAD","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"New client connected: BcszSDj1m0xxocLYAAAF","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"Client disconnected: BcszSDj1m0xxocLYAAAF","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"New client connected: xRN2VzTwEMIzdtQYAAAH","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"Socket xRN2VzTwEMIzdtQYAAAH joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:12:43"}
+{"level":"info","message":"Client disconnected: xRN2VzTwEMIzdtQYAAAH","service":"gikpsmail-service","timestamp":"2026-05-10 17:35:47"}
