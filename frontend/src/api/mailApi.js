@@ -22,13 +22,17 @@ export const sendEmail = async (emailData, attachments = []) => {
   return response.data;
 };
 
-export const getInbox = async () => {
-  const response = await apiClient.get('/mail/inbox');
+export const getInbox = async (search = '') => {
+  const response = await apiClient.get('/mail/inbox', {
+    params: { search }
+  });
   return response.data;
 };
 
-export const getSent = async () => {
-  const response = await apiClient.get('/mail/sent');
+export const getSent = async (search = '') => {
+  const response = await apiClient.get('/mail/sent', {
+    params: { search }
+  });
   return response.data;
 };
 

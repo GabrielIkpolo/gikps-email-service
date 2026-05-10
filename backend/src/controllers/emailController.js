@@ -102,8 +102,26 @@ export const sendEmail = async (req, res, next) => {
 export const getInbox = async (req, res, next) => {
   try {
     const userId = req.user.id;
+    const { search } = req.query;
+
+    const whereClause = search 
+      ? {
+          AND: [
+            { receiverId: userId },
+            {
+              OR: [
+                { subject: { contains: search, mode: 'insensitive' } },
+                { text: { contains: search, mode: 'insensitive' } },
+                { sender: { email: { contains: search, mode: 'insensitive' } } },
+                { sender: { fullName: { contains: search, mode: 'insensitive' } } },
+              ]
+            }
+          ]
+        }
+      : { receiverId: userId };
+
     const emails = await prisma.email.findMany({
-      where: { receiverId: userId },
+      where: whereClause,
       orderBy: { createdAt: 'desc' },
       include: { 
         attachments: true,
@@ -131,8 +149,26 @@ export const getInbox = async (req, res, next) => {
 export const getSent = async (req, res, next) => {
   try {
     const userId = req.user.id;
+    const { search } = req.query;
+
+    const whereClause = search 
+      ? {
+          AND: [
+            { senderId: userId },
+            {
+              OR: [
+                { subject: { contains: search, mode: 'insensitive' } },
+                { text: { contains: search, mode: 'insensitive' } },
+                { receiver: { email: { contains: search, mode: 'insensitive' } } },
+                { receiver: { fullName: { contains: search, mode: 'insensitive' } } },
+              ]
+            }
+          ]
+        }
+      : { senderId: userId };
+
     const emails = await prisma.email.findMany({
-      where: { senderId: userId },
+      where: whereClause,
       orderBy: { createdAt: 'desc' },
       include: { 
         attachments: true,

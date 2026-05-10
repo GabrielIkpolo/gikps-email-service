@@ -15,6 +15,7 @@ import {
   HiPlus,
   HiPaperClip,
   HiMenu,
+  HiSearch,
   HiX
 } from 'react-icons/hi';
 import ComposeModal from '../components/ComposeModal';
@@ -28,14 +29,29 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isComposeModalOpen, setIsComposeModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(prev => !prev);
   };
 
+  // Debounce search query
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchQuery]);
+
   const handleNavClick = (newView) => {
     setView(newView);
+    setSearchQuery('');
+    setDebouncedSearchQuery('');
     if (window.innerWidth <= 768) {
       setIsSidebarOpen(false);
     }
@@ -49,13 +65,13 @@ const Dashboard = () => {
   };
 
   const handleComposeSuccess = () => {
-    fetchEmails();
+    fetchEmails(searchQuery);
   };
 
   useEffect(() => {
     fetchUserData();
-    fetchEmails();
-  }, [view]);
+    fetchEmails(debouncedSearchQuery);
+  }, [view, debouncedSearchQuery]);
 
   useEffect(() => {
     if (!user) return;
@@ -105,14 +121,14 @@ const Dashboard = () => {
     }
   };
 
-  const fetchEmails = async () => {
+  const fetchEmails = async (search = '') => {
     setLoading(true);
     try {
       let data;
       if (view === 'inbox') {
-        data = await getInbox();
+        data = await getInbox(search);
       } else {
-        data = await getSent();
+        data = await getSent(search);
       }
       setEmails(data.data.emails);
     } catch (err) {
@@ -131,7 +147,7 @@ const Dashboard = () => {
     setSelectedEmail(email);
     if (!email.isRead) {
       await updateEmailStatus(email.id, { isRead: true });
-      fetchEmails();
+      fetchEmails(searchQuery);
     }
   };
 
@@ -145,7 +161,7 @@ const Dashboard = () => {
         if (selectedEmail && selectedEmail.id === id) {
           setSelectedEmail(null);
         }
-        fetchEmails();
+        fetchEmails(searchQuery);
         toast.success('Email deleted successfully');
       } catch (err) {
         console.error('Error deleting email:', err);
@@ -160,7 +176,7 @@ const Dashboard = () => {
     }
     const currentStatus = emails.find(em => em.id === id)?.isStarred;
     await updateEmailStatus(id, { isStarred: !currentStatus });
-    fetchEmails();
+    fetchEmails(searchQuery);
   };
 
   return (
@@ -226,12 +242,24 @@ const Dashboard = () => {
                 </button>
                 <h2 className="list-title">{view === 'inbox' ? 'Inbox' : 'Sent'}</h2>
               </div>
-              <button 
-                className="compose-button"
-                onClick={handleComposeOpen}
-              >
-                <HiPlus /> <span className="compose-text">Compose</span>
-              </button>
+              <div className="list-header-right">
+                <div className="search-container">
+                  <HiSearch className="search-icon" />
+                  <input
+                    type="text"
+                    placeholder="Search emails..."
+                    className="search-input"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
+                <button 
+                  className="compose-button"
+                  onClick={handleComposeOpen}
+                >
+                  <HiPlus /> <span className="compose-text">Compose</span>
+                </button>
+              </div>
             </header>
 
             {loading ? (
