@@ -929,3 +929,10 @@
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-10 15:47:52"}
 {"level":"info","message":"New client connected: 079RGeHn2oxz89RwAAAg","service":"gikpsmail-service","timestamp":"2026-05-10 15:47:52"}
 {"level":"info","message":"Socket 079RGeHn2oxz89RwAAAg joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 15:47:52"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"New client connected: SSf5z7VmviaCJKr_AAAC","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
+{"level":"info","message":"Socket SSf5z7VmviaCJKr_AAAC joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 15:55:55"}
