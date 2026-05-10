@@ -29,20 +29,22 @@ const Dashboard = () => {
   const [isComposeModalOpen, setIsComposeModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleSidebarOnMobile = () => {
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
+  const handleNavClick = (newView) => {
+    setView(newView);
     if (window.innerWidth <= 768) {
       setIsSidebarOpen(false);
     }
   };
 
-  const handleNavClick = (newView) => {
-    setView(newView);
-    toggleSidebarOnMobile();
-  };
-
   const handleComposeOpen = () => {
     setIsComposeModalOpen(true);
-    toggleSidebarOnMobile();
+    if (window.innerWidth <= 768) {
+      setIsSidebarOpen(false);
+    }
   };
 
   const handleComposeSuccess = () => {
@@ -160,7 +162,7 @@ const Dashboard = () => {
       <aside className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <h1 className="logo">GikpsMail</h1>
-          <button className="close-sidebar-button" onClick={() => setIsSidebarOpen(false)}>
+          <button className="close-sidebar-button" onClick={toggleSidebar}>
             <HiX />
           </button>
         </div>
@@ -206,7 +208,7 @@ const Dashboard = () => {
           <div className="email-list-view">
             <header className="list-header">
               <div className="list-header-left">
-                <button className="menu-toggle-button" onClick={() => setIsSidebarOpen(true)}>
+                <button className="menu-toggle-button" onClick={toggleSidebar}>
                   <HiMenu />
                 </button>
                 <h2 className="list-title">{view === 'inbox' ? 'Inbox' : 'Sent'}</h2>
