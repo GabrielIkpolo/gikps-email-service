@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { login } from '../api/authApi';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
 import './Login.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -39,10 +39,8 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await login(credentials);
-      localStorage.setItem('gikpsmail_token', response.token);
+      await login(credentials);
       toast.success('Welcome back!');
-      navigate('/dashboard');
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Login failed. Please check your credentials.';
       toast.error(errorMessage);

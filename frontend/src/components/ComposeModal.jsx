@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { HiX, HiPaperClip, HiSend } from 'react-icons/hi';
+import { HiX, HiPaperClip } from 'react-icons/hi';
+import { HiPaperAirplane } from 'react-icons/hi2';
 import { sendEmail } from '../api/mailApi';
 import './ComposeModal.css';
 
@@ -123,7 +124,7 @@ const ComposeModal = ({ isOpen, onClose, onSendSuccess }) => {
             </div>
 
             <button type="submit" className="send-button" disabled={loading}>
-              {loading ? 'Sending...' : <><HiSend /> Send</>}
+              {loading ? 'Sending...' : <><HiPaperAirplane /> Send</>}
             </button>
           </div>
         </form>

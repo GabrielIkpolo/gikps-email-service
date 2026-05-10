@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { register, checkUsername } from '../api/authApi';
+import { useAuth } from '../context/AuthContext';
+import { checkUsername } from '../api/authApi';
 import { toast } from 'react-hot-toast';
 import './Register.css';
 
@@ -14,6 +15,7 @@ const Register = () => {
   const [usernameStatus, setUsernameStatus] = useState('idle'); // 'idle' | 'checking' | 'available' | 'taken'
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { register } = useAuth();
   const debounceTimer = useRef(null);
 
   const handleChange = (e) => {
