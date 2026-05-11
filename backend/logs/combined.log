@@ -1013,3 +1013,947 @@
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
 {"level":"info","message":"New client connected: LZo1qmD9Ex5nTJxlAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
 {"level":"info","message":"Socket LZo1qmD9Ex5nTJxlAAAK joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"Client disconnected: LZo1qmD9Ex5nTJxlAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:07"}
+{"level":"info","message":"GET /api/auth/check-username/dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:26"}
+{"level":"info","message":"POST /api/auth/register","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:36"}
+{"level":"info","message":"Registration attempt for username: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:36"}
+{"level":"info","message":"User registered successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:37"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"New client connected: eMGgCGfxCCinfF8_AAAN","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"Socket eMGgCGfxCCinfF8_AAAN joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:31:46"}
+{"level":"info","message":"PATCH /api/auth/change-password","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:08"}
+{"level":"info","message":"Password change attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:08"}
+{"level":"warn","message":"Password change failed: Incorrect current password for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:08"}
+{"level":"error","message":"FAIL 401: Incorrect current password","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:08"}
+{"level":"info","message":"Client disconnected: eMGgCGfxCCinfF8_AAAN","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:08"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"New client connected: EVwDtOudXJK_t_gjAAAQ","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"Socket EVwDtOudXJK_t_gjAAAQ joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:29"}
+{"level":"info","message":"PATCH /api/auth/change-password","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:55"}
+{"level":"info","message":"Password change attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:55"}
+{"level":"info","message":"Password changed successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:32:55"}
+{"level":"info","message":"Client disconnected: EVwDtOudXJK_t_gjAAAQ","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:02"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:48"}
+{"level":"info","message":"Login attempt for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:48"}
+{"level":"warn","message":"Login failed: Incorrect credentials for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:48"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-11 10:33:48"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:01"}
+{"level":"info","message":"Login attempt for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:01"}
+{"level":"warn","message":"Login failed: Incorrect credentials for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:01"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:01"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:09"}
+{"level":"info","message":"Login attempt for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:09"}
+{"level":"warn","message":"Login failed: Incorrect credentials for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:10"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:10"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"Login attempt for identifier: dojo@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"New client connected: MzcvR15huABebwJDAAAS","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"Socket MzcvR15huABebwJDAAAS joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:21"}
+{"level":"info","message":"PATCH /api/auth/change-password","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:42"}
+{"level":"info","message":"Password change attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:42"}
+{"level":"info","message":"Password changed successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:43"}
+{"level":"info","message":"Client disconnected: MzcvR15huABebwJDAAAS","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:34:59"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:02"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:24"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:24"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"New client connected: P8bAxQyT7aq5uDhdAAAU","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"Socket P8bAxQyT7aq5uDhdAAAU joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:25"}
+{"level":"info","message":"Client disconnected: P8bAxQyT7aq5uDhdAAAU","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:35:30"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"New client connected: OipqOTrnTdngZB19AAAW","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"Socket OipqOTrnTdngZB19AAAW joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:27"}
+{"level":"info","message":"Client disconnected: OipqOTrnTdngZB19AAAW","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:29"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:38:31"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:27"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:27"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"New client connected: vgYM4lGPDFcNTUhoAAAY","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"Socket vgYM4lGPDFcNTUhoAAAY joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:28"}
+{"level":"info","message":"Client disconnected: vgYM4lGPDFcNTUhoAAAY","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:30"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:39:31"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:15"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:34"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:34"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"New client connected: _aGKB1x2XJEZX6InAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"Client disconnected: _aGKB1x2XJEZX6InAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"New client connected: e64O9Wkeooq1qravAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"Socket e64O9Wkeooq1qravAAAD joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:35"}
+{"level":"info","message":"Client disconnected: e64O9Wkeooq1qravAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:37"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:40:38"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:00"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:00"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:01"}
+{"level":"info","message":"New client connected: 7u13ycdgY7XO3vT0AAAG","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:01"}
+{"level":"info","message":"Socket 7u13ycdgY7XO3vT0AAAG joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:01"}
+{"level":"info","message":"Client disconnected: 7u13ycdgY7XO3vT0AAAG","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:04"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:04"}
+{"level":"info","message":"New client connected: nV6r8Id3kpReo7Z1AAAI","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:04"}
+{"level":"info","message":"Socket nV6r8Id3kpReo7Z1AAAI joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:04"}
+{"level":"info","message":"Client disconnected: nV6r8Id3kpReo7Z1AAAI","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:07"}
+{"level":"info","message":"New client connected: HU0nW4yDp7SfCtqgAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:07"}
+{"level":"info","message":"Socket HU0nW4yDp7SfCtqgAAAK joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:07"}
+{"level":"info","message":"Client disconnected: HU0nW4yDp7SfCtqgAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:22"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"New client connected: EwWikB6m06BxzkAiAAAN","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"Socket EwWikB6m06BxzkAiAAAN joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:30"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:54"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:48:54"}
+{"level":"info","message":"Client disconnected: EwWikB6m06BxzkAiAAAN","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:01"}
+{"level":"info","message":"New client connected: Rbn6gW4XQ9N3vtmcAAAP","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:01"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:01"}
+{"level":"info","message":"Socket Rbn6gW4XQ9N3vtmcAAAP joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:01"}
+{"level":"info","message":"Client disconnected: Rbn6gW4XQ9N3vtmcAAAP","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:04"}
+{"level":"info","message":"New client connected: nhwd9VrZTega5YL3AAAR","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:04"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:04"}
+{"level":"info","message":"Socket nhwd9VrZTega5YL3AAAR joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:04"}
+{"level":"info","message":"Client disconnected: nhwd9VrZTega5YL3AAAR","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:06"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:06"}
+{"level":"info","message":"New client connected: dyrbvY59XNQI_YWNAAAT","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:06"}
+{"level":"info","message":"Socket dyrbvY59XNQI_YWNAAAT joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:06"}
+{"level":"info","message":"PATCH /api/mail/6a01a606888e9c5ae4bd184d","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:10"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:10"}
+{"level":"info","message":"Client disconnected: dyrbvY59XNQI_YWNAAAT","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:22"}
+{"level":"info","message":"New client connected: Vcl3AmlrTEDOTIGrAAAV","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:22"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:22"}
+{"level":"info","message":"Socket Vcl3AmlrTEDOTIGrAAAV joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:22"}
+{"level":"info","message":"Client disconnected: Vcl3AmlrTEDOTIGrAAAV","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:28"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"New client connected: R5jHW-u8eu_bUb0jAAAY","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"Socket R5jHW-u8eu_bUb0jAAAY joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:49:38"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:31"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:31"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"New client connected: h6rLplA6B4pQxvfqAAAb","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"Socket h6rLplA6B4pQxvfqAAAb joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:48"}
+{"level":"info","message":"Client disconnected: h6rLplA6B4pQxvfqAAAb","service":"gikpsmail-service","timestamp":"2026-05-11 10:50:51"}
+{"level":"info","message":"Client disconnected: R5jHW-u8eu_bUb0jAAAY","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:00"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"New client connected: rZLmA6nhanUBmzPRAAAe","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"Socket rZLmA6nhanUBmzPRAAAe joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:07"}
+{"level":"info","message":"Client disconnected: rZLmA6nhanUBmzPRAAAe","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:11"}
+{"level":"info","message":"New client connected: bHnNKlnyMkkUj9fxAAAg","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:11"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:11"}
+{"level":"info","message":"Socket bHnNKlnyMkkUj9fxAAAg joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:11"}
+{"level":"info","message":"Client disconnected: bHnNKlnyMkkUj9fxAAAg","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:13"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:13"}
+{"level":"info","message":"New client connected: F4lXwpJ2wwaLroYYAAAi","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:13"}
+{"level":"info","message":"Socket F4lXwpJ2wwaLroYYAAAi joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 10:51:13"}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { getInbox, getSent, getEmail, updateEmailStatus, deleteEmail } from '../api/mailApi';
-import { getMe } from '../api/authApi';
+import { getInbox, getSent, updateEmailStatus, deleteEmail } from '../api/mailApi';
+import { useAuth } from '../context/AuthContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { io } from 'socket.io-client';
 import { 
@@ -24,7 +24,7 @@ import SettingsModal from '../components/SettingsModal';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
+  const { user, logout } = useAuth();
   const [emails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [view, setView] = useState('inbox'); // 'inbox', 'sent'
@@ -72,9 +72,10 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetchUserData();
-    fetchEmails(debouncedSearchQuery);
-  }, [view, debouncedSearchQuery]);
+    if (user) {
+      fetchEmails(debouncedSearchQuery);
+    }
+  }, [view, debouncedSearchQuery, user]);
 
   useEffect(() => {
     if (!user) return;
@@ -113,18 +114,8 @@ const Dashboard = () => {
     };
   }, [user, view]);
 
-  const fetchUserData = async () => {
-// ...
-    try {
-      const userData = await getMe();
-      setUser(userData.data.user);
-    } catch (err) {
-      console.error('Error fetching user:', err);
-      navigate('/login');
-    }
-  };
-
   const fetchEmails = async (search = '') => {
+    if (!user) return;
     setLoading(true);
     try {
       let data;
@@ -135,6 +126,9 @@ const Dashboard = () => {
       }
       setEmails(data.data.emails);
     } catch (err) {
+      if (err.response?.status === 401) {
+        return;
+      }
       console.error('Error fetching emails:', err);
     } finally {
       setLoading(false);
@@ -142,8 +136,7 @@ const Dashboard = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('gikpsmail_token');
-    navigate('/login');
+    logout();
   };
 
   const handleSelectEmail = async (email) => {
