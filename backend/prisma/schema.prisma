@@ -13,6 +13,8 @@ model User {
   password       String
   email          String   @unique
   fullName       String?
+  resetPasswordToken      String?
+  resetPasswordExpires    DateTime?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   sentEmails     Email[]  @relation("SentEmails")

@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import AppError from '../utils/errors.js';
 import logger from '../utils/logger.js';
 import { z } from 'zod';
+import crypto from 'crypto';
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -25,6 +26,15 @@ const loginSchema = z.object({
 
 const changePasswordSchema = z.object({
   currentPassword: z.string().min(1, 'Current password is required'),
+  newPassword: z.string().min(8, 'New password must be at least 8 characters long'),
+});
+
+const forgotPasswordSchema = z.object({
+  email: z.string().email('Invalid email address'),
+});
+
+const resetPasswordSchema = z.object({
+  token: z.string().min(1, 'Token is required'),
   newPassword: z.string().min(8, 'New password must be at least 8 characters long'),
 });
 
@@ -228,6 +238,102 @@ export const changePassword = async (req, res, next) => {
   } catch (err) {
     if (err instanceof z.ZodError) {
       logger.warn(`Password change validation failed: ${err.errors.map(e => e.message).join(', ')}`);
+      return next(new AppError(err.errors[0].message, 400));
+    }
+    next(err);
+  }
+};
+
+export const forgotPassword = async (req, res, next) => {
+  try {
+    const validatedData = forgotPasswordSchema.parse(req.body);
+    const { email } = validatedData;
+    const normalizedEmail = email.toLowerCase();
+
+    const user = await prisma.user.findUnique({
+      where: { email: normalizedEmail },
+    });
+
+    if (!user) {
+      // For security, we don't reveal if the email exists.
+      return res.status(200).json({
+        status: 'success',
+        message: 'If an account with that email exists, a reset link has been sent.',
+      });
+    }
+
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    const hashedToken = crypto
+      .createHash('sha256')
+      .update(resetToken)
+      .digest('hex');
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        resetPasswordToken: hashedToken,
+        resetPasswordExpires: new Date(Date.now() + 3600000), // 1 hour
+      },
+    });
+
+    logger.info(`Password reset request for user: ${user.email}. Token: ${resetToken}`);
+    // In a real app, you would send this via email.
+    // For now, we include it in the response to facilitate testing.
+    res.status(200).json({
+      status: 'success',
+      message: 'If an account with that email exists, a reset link has has been sent.',
+      debugToken: resetToken, // ONLY FOR TESTING
+    });
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      return next(new AppError(err.errors[0].message, 400));
+    }
+    next(err);
+  }
+};
+
+export const resetPassword = async (req, res, next) => {
+  try {
+    const validatedData = resetPasswordSchema.parse(req.body);
+    const { token, newPassword } = validatedData;
+
+    const hashedToken = crypto
+      .createHash('sha256')
+      .update(token)
+      .digest('hex');
+
+    const user = await prisma.user.findFirst({
+      where: {
+        resetPasswordToken: hashedToken,
+        resetPasswordExpires: {
+          gt: new Date(),
+        },
+      },
+    });
+
+    if (!user) {
+      return next(new AppError('Token is invalid or has expired', 400));
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        password: hashedPassword,
+        resetPasswordToken: null,
+        resetPasswordExpires: null,
+      },
+    });
+
+    logger.info(`Password reset successfully for user ID: ${user.id}`);
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Password has been reset successfully.',
+    });
+  } catch (err) {
+    if (err instanceof z.ZodError) {
       return next(new AppError(err.errors[0].message, 400));
     }
     next(err);
