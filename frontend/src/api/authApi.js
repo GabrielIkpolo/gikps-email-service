@@ -19,3 +19,8 @@ export const getMe = async () => {
   const response = await apiClient.get('/auth/me');
   return response.data;
 };
+
+export const changePassword = async (passwordData) => {
+  const response = await apiClient.patch('/auth/change-password', passwordData);
+  return response.data;
+};

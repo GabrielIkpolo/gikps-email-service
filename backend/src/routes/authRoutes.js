@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
+router.patch('/change-password', authenticate, authController.changePassword);
 router.get('/me', authenticate, authController.getMe);
 router.get('/check-username/:username', authController.checkUsername);
 router.get('/verify', validateApiKey, authController.getMe); // Added for adapter verification

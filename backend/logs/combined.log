@@ -966,3 +966,50 @@
 {"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:44"}
 {"level":"info","message":"New client connected: ASabEipMq2FOMcKlAAAB","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:45"}
 {"level":"info","message":"Socket ASabEipMq2FOMcKlAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-10 17:43:45"}
+{"level":"info","message":"Client disconnected: ASabEipMq2FOMcKlAAAB","service":"gikpsmail-service","timestamp":"2026-05-10 17:45:16"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 10:05:09"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:05:20"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:05:20"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.user.findUnique()` invocation:\n\n\nRaw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: Unknown, Servers: [ { Address: localhost:27017, Type: Unknown, Error: Kind: I/O error: Connection refused (os error 111), labels: {}, source: None } ] }, labels: {}, source: None`","service":"gikpsmail-service","timestamp":"2026-05-11 10:05:50"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.user.findUnique()` invocation:\n\n\nRaw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: Unknown, Servers: [ { Address: localhost:27017, Type: Unknown, Error: Kind: I/O error: Connection refused (os error 111), labels: {}, source: None } ] }, labels: {}, source: None`","service":"gikpsmail-service","timestamp":"2026-05-11 10:05:50"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:07:56"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:07:56"}
+{"level":"error","message":"ERROR 500: \nInvalid `prisma.user.findFirst()` invocation:\n\n\nRaw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: Unknown, Servers: [ { Address: localhost:27017, Type: Unknown, Error: Kind: I/O error: Connection refused (os error 111), labels: {}, source: None } ] }, labels: {}, source: None`","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:26"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"New client connected: hjutCVU-E7MWVOb8AAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"Socket hjutCVU-E7MWVOb8AAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:08:57"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:06"}
+{"level":"info","message":"New client connected: EhmKOnr1QwbLWXcjAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:08"}
+{"level":"info","message":"Socket EhmKOnr1QwbLWXcjAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:08"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:28"}
+{"level":"info","message":"New client connected: 8WRvuyMXSckoBrUEAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:29"}
+{"level":"info","message":"Socket 8WRvuyMXSckoBrUEAAAB joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:25:29"}
+{"level":"info","message":"Client disconnected: 8WRvuyMXSckoBrUEAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"New client connected: X4dZJ226fJ0SKPoMAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"Client disconnected: X4dZJ226fJ0SKPoMAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"New client connected: 8IlAAlyoclSyi2vyAAAF","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"Socket 8IlAAlyoclSyi2vyAAAF joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:26:50"}
+{"level":"info","message":"Client disconnected: 8IlAAlyoclSyi2vyAAAF","service":"gikpsmail-service","timestamp":"2026-05-11 10:28:47"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:28:47"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:28:47"}
+{"level":"info","message":"New client connected: es1HSgKCC8-VOjhvAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 10:28:47"}
+{"level":"info","message":"Socket es1HSgKCC8-VOjhvAAAH joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:28:47"}
+{"level":"info","message":"Client disconnected: es1HSgKCC8-VOjhvAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:41"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"New client connected: LZo1qmD9Ex5nTJxlAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}
+{"level":"info","message":"Socket LZo1qmD9Ex5nTJxlAAAK joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 10:29:42"}

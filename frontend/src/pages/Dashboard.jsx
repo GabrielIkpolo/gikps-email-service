@@ -16,9 +16,11 @@ import {
   HiPaperClip,
   HiMenu,
   HiSearch,
-  HiX
+  HiX,
+  HiCog
 } from 'react-icons/hi';
 import ComposeModal from '../components/ComposeModal';
+import SettingsModal from '../components/SettingsModal';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -29,6 +31,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isComposeModalOpen, setIsComposeModalOpen] = useState(false);
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -225,9 +228,18 @@ const Dashboard = () => {
               <span className="user-email">{user?.email}</span>
             </div>
           </div>
-          <button className="logout-button" onClick={handleLogout}>
-            <HiLogout /> Logout
-          </button>
+          <div className="sidebar-footer-actions">
+            <button 
+              className="settings-button" 
+              title="Settings"
+              onClick={() => setIsSettingsModalOpen(true)}
+            >
+              <HiCog />
+            </button>
+            <button className="logout-button" onClick={handleLogout}>
+              <HiLogout /> Logout
+            </button>
+          </div>
         </div>
       </aside>
 
@@ -367,6 +379,10 @@ const Dashboard = () => {
           isOpen={isComposeModalOpen} 
           onClose={() => setIsComposeModalOpen(false)} 
           onSendSuccess={handleComposeSuccess}
+        />
+        <SettingsModal 
+          isOpen={isSettingsModalOpen} 
+          onClose={() => setIsSettingsModalOpen(false)} 
         />
       </div>
     );

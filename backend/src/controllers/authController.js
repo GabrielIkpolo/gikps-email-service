@@ -23,6 +23,11 @@ const loginSchema = z.object({
   password: z.string().min(1, 'Password is required'),
 });
 
+const changePasswordSchema = z.object({
+  currentPassword: z.string().min(1, 'Current password is required'),
+  newPassword: z.string().min(8, 'New password must be at least 8 characters long'),
+});
+
 export const checkUsername = async (req, res, next) => {
   try {
     const { username } = req.params;
@@ -181,6 +186,50 @@ export const getMe = async (req, res, next) => {
       },
     });
   } catch (err) {
+    next(err);
+  }
+};
+
+export const changePassword = async (req, res, next) => {
+  try {
+    logger.info(`Password change attempt for user ID: ${req.user.id}`);
+    
+    const validatedData = changePasswordSchema.parse(req.body);
+    const { currentPassword, newPassword } = validatedData;
+
+    const user = await prisma.user.findUnique({
+      where: { id: req.user.id },
+    });
+
+    if (!user) {
+      return next(new AppError('User not found', 404));
+    }
+
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+
+    if (!isMatch) {
+      logger.warn(`Password change failed: Incorrect current password for user ID: ${req.user.id}`);
+      return next(new AppError('Incorrect current password', 401));
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { password: hashedPassword },
+    });
+
+    logger.info(`Password changed successfully for user ID: ${req.user.id}`);
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Password updated successfully',
+    });
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      logger.warn(`Password change validation failed: ${err.errors.map(e => e.message).join(', ')}`);
+      return next(new AppError(err.errors[0].message, 400));
+    }
     next(err);
   }
 };
