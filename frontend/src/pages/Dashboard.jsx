@@ -21,10 +21,11 @@ import {
 } from 'react-icons/hi';
 import ComposeModal from '../components/ComposeModal';
 import SettingsModal from '../components/SettingsModal';
+import ConfirmationModal from '../components/ConfirmationModal';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, updateUser } = useAuth();
   const [emails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [view, setView] = useState('inbox'); // 'inbox', 'sent'
@@ -32,6 +33,8 @@ const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isComposeModalOpen, setIsComposeModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [isConfirmDeleteOpen, setIsConfirmDeleteOpen] = useState(false);
+  const [emailToDelete, setEmailToDelete] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -109,10 +112,17 @@ const Dashboard = () => {
       });
     });
 
+    socket.on('profile-updated', (data) => {
+      if (data.user && data.user.id === user.id) {
+        updateUser(data.user);
+        toast.success('Profile updated successfully!');
+      }
+    });
+    
     return () => {
       socket.disconnect();
     };
-  }, [user, view]);
+  }, [user, view, updateUser]);
 
   const fetchEmails = async (search = '') => {
     if (!user) return;
@@ -147,22 +157,30 @@ const Dashboard = () => {
     }
   };
 
-  const handleDeleteEmail = async (id, e) => {
+  const handleDeleteEmail = (id, e) => {
     if (e && typeof e.stopPropagation === 'function') {
       e.stopPropagation();
     }
-    if (window.confirm('Are you sure you want to delete this email?')) {
-      try {
-        await deleteEmail(id);
-        if (selectedEmail && selectedEmail.id === id) {
-          setSelectedEmail(null);
-        }
-        fetchEmails(searchQuery);
-        toast.success('Email deleted successfully');
-      } catch (err) {
-        console.error('Error deleting email:', err);
-        toast.error(err.response?.data?.error || 'Failed to delete email');
+    setEmailToDelete(id);
+    setIsConfirmDeleteOpen(true);
+  };
+
+  const confirmDeleteEmail = async () => {
+    if (!emailToDelete) return;
+
+    try {
+      await deleteEmail(emailToDelete);
+      if (selectedEmail && selectedEmail.id === emailToDelete) {
+        setSelectedEmail(null);
       }
+      fetchEmails(searchQuery);
+      toast.success('Email deleted successfully');
+    } catch (err) {
+      console.error('Error deleting email:', err);
+      toast.error(err.response?.data?.error || 'Failed to delete email');
+    } finally {
+      setIsConfirmDeleteOpen(false);
+      setEmailToDelete(null);
     }
   };
 
@@ -376,6 +394,15 @@ const Dashboard = () => {
         <SettingsModal 
           isOpen={isSettingsModalOpen} 
           onClose={() => setIsSettingsModalOpen(false)} 
+        />
+        <ConfirmationModal
+          isOpen={isConfirmDeleteOpen}
+          onClose={() => setIsConfirmDeleteOpen(false)}
+          onConfirm={confirmDeleteEmail}
+          title="Delete Email?"
+          message="Are you sure you want to delete this email? This action cannot be undone."
+          confirmText="Delete"
+          type="danger"
         />
       </div>
     );

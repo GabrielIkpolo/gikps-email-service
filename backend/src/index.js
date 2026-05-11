@@ -49,6 +49,9 @@ io.on('connection', (socket) => {
   });
 });
 
+// Attach io to app so it can be accessed in controllers
+app.set('io', io);
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);

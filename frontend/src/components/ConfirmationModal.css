@@ -1,0 +1,135 @@
+.confirmation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.confirmation-modal-container {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.confirmation-modal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto 1.5rem;
+}
+
+.modal-type-warning {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.modal-type-danger {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.modal-type-success {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.confirmation-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.confirmation-modal-message {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.confirmation-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirm-cancel-button {
+  padding: 0.625rem 1.25rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.confirm-cancel-button:hover {
+  background-color: #e5e7eb;
+}
+
+.confirm-action-button {
+  padding: 0.625rem 1.25rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.confirm-action-button.modal-type-warning {
+  background-color: #d97706;
+}
+
+.confirm-action-button.modal-type-danger {
+  background-color: #dc2626;
+}
+
+.confirm-action-button.modal-type-success {
+  background-color: #059669;
+}
+
+.confirm-action-button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.confirm-action-button:active {
+  transform: translateY(0);
+}
+
+.confirm-action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

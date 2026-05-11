@@ -60,13 +60,18 @@ export const AuthProvider = ({ children }) => {
     navigate('/login');
   };
 
+  const updateUser = (updatedUser) => {
+    setUser(updatedUser);
+  };
+
   const value = {
     user,
     isAuthenticated,
     isLoading,
     login,
     register,
-    logout
+    logout,
+    updateUser
   };
 
   return (

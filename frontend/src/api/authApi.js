@@ -20,6 +20,11 @@ export const getMe = async () => {
   return response.data;
 };
 
+export const updateMe = async (userData) => {
+  const response = await apiClient.patch('/auth/me', userData);
+  return response.data;
+};
+
 export const changePassword = async (passwordData) => {
   const response = await apiClient.patch('/auth/change-password', passwordData);
   return response.data;

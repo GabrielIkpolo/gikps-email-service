@@ -38,6 +38,10 @@ const resetPasswordSchema = z.object({
   newPassword: z.string().min(8, 'New password must be at least 8 characters long'),
 });
 
+const updateMeSchema = z.object({
+  fullName: z.string().min(1, 'Full name is required').max(100).optional(),
+});
+
 export const checkUsername = async (req, res, next) => {
   try {
     const { username } = req.params;
@@ -238,6 +242,52 @@ export const changePassword = async (req, res, next) => {
   } catch (err) {
     if (err instanceof z.ZodError) {
       logger.warn(`Password change validation failed: ${err.errors.map(e => e.message).join(', ')}`);
+      return next(new AppError(err.errors[0].message, 400));
+    }
+    next(err);
+  }
+};
+
+export const updateMe = async (req, res, next) => {
+  try {
+    logger.info(`Profile update attempt for user ID: ${req.user.id}`);
+
+    const validatedData = updateMeSchema.parse(req.body);
+
+    const updatedUser = await prisma.user.update({
+      where: { id: req.user.id },
+      data: validatedData,
+    });
+
+    // Emit real-time profile update event
+    const io = req.app.get('io');
+    if (io) {
+      io.to(`user_${updatedUser.id}`).emit('profile-updated', {
+        user: {
+          id: updatedUser.id,
+          username: updatedUser.username,
+          email: updatedUser.email,
+          fullName: updatedUser.fullName,
+        },
+      });
+    }
+
+    logger.info(`Profile updated successfully for user ID: ${updatedUser.id}`);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        user: {
+          id: updatedUser.id,
+          username: updatedUser.username,
+          email: updatedUser.email,
+          fullName: updatedUser.fullName,
+        },
+      },
+    });
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      logger.warn(`Profile update validation failed: ${err.errors.map(e => e.message).join(', ')}`);
       return next(new AppError(err.errors[0].message, 400));
     }
     next(err);

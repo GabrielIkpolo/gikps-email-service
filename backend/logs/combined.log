@@ -2063,3 +2063,171 @@
 {"level":"info","message":"PATCH /api/mail/6a01a667888e9c5ae4bd184e","service":"gikpsmail-service","timestamp":"2026-05-11 11:21:41"}
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:21:41"}
 {"level":"info","message":"Client disconnected: J196pScxzTXQvACVAAAL","service":"gikpsmail-service","timestamp":"2026-05-11 11:21:48"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 11:37:04"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"Login attempt for identifier: gab@gikpsmail.com","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"User logged in successfully: gab (69ff4c2f23118a98e179a210)","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"New client connected: 6OkDI5voPRl-JqvJAAAC","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"Socket 6OkDI5voPRl-JqvJAAAC joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:09"}
+{"level":"info","message":"Client disconnected: 6OkDI5voPRl-JqvJAAAC","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:28"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:42"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:42"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:42"}
+{"level":"info","message":"New client connected: nykDLoPytbCTYs56AAAF","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:43"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:43"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:43"}
+{"level":"info","message":"Socket nykDLoPytbCTYs56AAAF joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:39:43"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:15"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:15"}
+{"level":"info","message":"PATCH /api/mail/6a01b20f40088ee465ab28dd","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:30"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:30"}
+{"level":"info","message":"DELETE /api/mail/6a01b20f40088ee465ab28dd","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:36"}
+{"level":"info","message":"Attempting to delete email with ID: 6a01b20f40088ee465ab28dd by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:36"}
+{"level":"info","message":"Email with ID 6a01b20f40088ee465ab28dd deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:36"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:36"}
+{"level":"info","message":"Client disconnected: nykDLoPytbCTYs56AAAF","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:40"}
+{"level":"info","message":"New client connected: fDIoHFgSjpbo9MdeAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:40"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:40"}
+{"level":"info","message":"Socket fDIoHFgSjpbo9MdeAAAH joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:40"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:56"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:56"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:40:56"}
+{"level":"info","message":"Client disconnected: fDIoHFgSjpbo9MdeAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:03"}
+{"level":"info","message":"New client connected: qXp2YkqvR3McGGMtAAAJ","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:03"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:03"}
+{"level":"info","message":"Socket qXp2YkqvR3McGGMtAAAJ joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:03"}
+{"level":"info","message":"Client disconnected: qXp2YkqvR3McGGMtAAAJ","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:05"}
+{"level":"info","message":"New client connected: f0LLboEMNXI_2BW1AAAL","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:05"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:05"}
+{"level":"info","message":"Socket f0LLboEMNXI_2BW1AAAL joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:05"}
+{"level":"info","message":"Client disconnected: f0LLboEMNXI_2BW1AAAL","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"New client connected: LxXFTrguEE-Hq8myAAAO","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"Socket LxXFTrguEE-Hq8myAAAO joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:41:19"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:30"}
+{"level":"info","message":"New client connected: TN50TSYyZFkc2ukdAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:31"}
+{"level":"info","message":"Socket TN50TSYyZFkc2ukdAAAB joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:31"}
+{"level":"info","message":"Client disconnected: TN50TSYyZFkc2ukdAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:51"}
+{"level":"info","message":"New client connected: xIT9fCkVbEHO3ZEsAAAE","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:51"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:51"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:51"}
+{"level":"info","message":"Socket xIT9fCkVbEHO3ZEsAAAE joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:42:51"}
+{"level":"info","message":"Client disconnected: xIT9fCkVbEHO3ZEsAAAE","service":"gikpsmail-service","timestamp":"2026-05-11 11:43:15"}
+{"level":"info","message":"New client connected: Irl-wJHtLniTdHv_AAAG","service":"gikpsmail-service","timestamp":"2026-05-11 11:43:15"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:43:15"}
+{"level":"info","message":"Socket Irl-wJHtLniTdHv_AAAG joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:43:15"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:44:47"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:44:47"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:44:47"}
+{"level":"info","message":"Client disconnected: Irl-wJHtLniTdHv_AAAG","service":"gikpsmail-service","timestamp":"2026-05-11 11:44:59"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"New client connected: pEhQuE0SaOZw7PlwAAAJ","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"Socket pEhQuE0SaOZw7PlwAAAJ joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:45:05"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"New client connected: wxDl_D28kWyPqjRhAAAM","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"Socket wxDl_D28kWyPqjRhAAAM joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:01"}
+{"level":"info","message":"Client disconnected: wxDl_D28kWyPqjRhAAAM","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:22"}
+{"level":"info","message":"POST /api/auth/login","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"Login attempt for identifier: dojo","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"User logged in successfully: dojo (6a01a1f9e2eb831565a844ba)","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"New client connected: HONQoQFnxq-GQOH5AAAP","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"Socket HONQoQFnxq-GQOH5AAAP joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:46:35"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:11"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:11"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:11"}
+{"level":"info","message":"Client disconnected: pEhQuE0SaOZw7PlwAAAJ","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:24"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"New client connected: 4h-cjJ5nbRSxWyHHAAAS","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"Socket 4h-cjJ5nbRSxWyHHAAAS joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:25"}
+{"level":"info","message":"Client disconnected: HONQoQFnxq-GQOH5AAAP","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"Client disconnected: 4h-cjJ5nbRSxWyHHAAAS","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"New client connected: 75LXGduABujuUOxQAAAW","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"Socket 75LXGduABujuUOxQAAAW joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"New client connected: ETnBZfceiMOZMtWpAAAZ","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"Client disconnected: ETnBZfceiMOZMtWpAAAZ","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"New client connected: aVJyzZEHzgVNe53DAAAb","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"Socket aVJyzZEHzgVNe53DAAAb joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:39"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:45"}
+{"level":"info","message":"New client connected: BItuEWPDHV6b8wjhAAAB","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:46"}
+{"level":"info","message":"Socket BItuEWPDHV6b8wjhAAAB joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:46"}
+{"level":"info","message":"New client connected: NvY1zdqQXmgZ-6XSAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:47"}
+{"level":"info","message":"Socket NvY1zdqQXmgZ-6XSAAAD joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:47:47"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:00"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:00"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:00"}
+{"level":"info","message":"Client disconnected: NvY1zdqQXmgZ-6XSAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:50"}
+{"level":"info","message":"New client connected: lHctTRC3jx8eAVFmAAAF","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:50"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:50"}
+{"level":"info","message":"Socket lHctTRC3jx8eAVFmAAAF joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:48:50"}
+{"level":"info","message":"Client disconnected: lHctTRC3jx8eAVFmAAAF","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"New client connected: N8xCirw6gw81rmhNAAAI","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"Socket N8xCirw6gw81rmhNAAAI joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:49:05"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-05-11 11:52:42"}
+{"level":"info","message":"New client connected: MUU_eyuSBES4CqQ5AAAB","service":"gikpsmail-service","timestamp":"2026-05-11 11:52:42"}
+{"level":"info","message":"Socket MUU_eyuSBES4CqQ5AAAB joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:52:42"}
+{"level":"info","message":"New client connected: BYjLyedx1DsappIVAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 11:52:43"}
+{"level":"info","message":"Socket BYjLyedx1DsappIVAAAD joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:52:43"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Client disconnected: MUU_eyuSBES4CqQ5AAAB","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Client disconnected: BYjLyedx1DsappIVAAAD","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"New client connected: a9qhfxIgsgt3TM6SAAAG","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"New client connected: S-7qUt1OjHn5kT7qAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Socket a9qhfxIgsgt3TM6SAAAG joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"Socket S-7qUt1OjHn5kT7qAAAH joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:22"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Client disconnected: a9qhfxIgsgt3TM6SAAAG","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Client disconnected: S-7qUt1OjHn5kT7qAAAH","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"New client connected: BeBTc_qb1FkpagNHAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"New client connected: -3v82MjRpO-SZkZuAAAL","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Socket BeBTc_qb1FkpagNHAAAK joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"Socket -3v82MjRpO-SZkZuAAAL joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:35"}
+{"level":"info","message":"PATCH /api/auth/me","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Profile update attempt for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Profile updated successfully for user ID: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Client disconnected: BeBTc_qb1FkpagNHAAAK","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Client disconnected: -3v82MjRpO-SZkZuAAAL","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"New client connected: _v8yTDg9lSNzBU7DAAAO","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"New client connected: FYeqcDDuaiNffjHjAAAP","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Socket _v8yTDg9lSNzBU7DAAAO joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
+{"level":"info","message":"Socket FYeqcDDuaiNffjHjAAAP joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-05-11 11:55:49"}
