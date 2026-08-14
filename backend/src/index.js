@@ -50,7 +50,7 @@ const generalLimiter = rateLimit({
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 requests per windowMs
+  max: 10, // Limit each IP to 10 requests per windowMs
   message: { status: 'error', error: 'Too many authentication attempts. Please try again after 15 minutes.' },
   skipSuccessfulRequests: true,
   standardHeaders: true,
@@ -58,16 +58,16 @@ const authLimiter = rateLimit({
 });
 
 const registerLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 3, // Limit each IP to 3 registration attempts per hour
+  windowMs: 30 * 60 * 1000, // 30mins
+  max: 10, // Limit each IP to 10 registration attempts per hour
   message: { status: 'error', error: 'Too many registration attempts. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const resetLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 3, // Limit each IP to 3 password reset requests per hour
+  windowMs: 30 * 60 * 1000, // 30mins
+  max: 10, // Limit each IP to 10 password reset requests per hour
   message: { status: 'error', error: 'Too many password reset requests. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
