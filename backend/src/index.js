@@ -15,7 +15,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import helmet from 'helmet';
-// import rateLimit from 'express-rate-limit'; // DISABLED - causing deployment issues
+import rateLimit from 'express-rate-limit'; // DISABLED - causing deployment issues
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
