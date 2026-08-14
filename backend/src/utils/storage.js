@@ -6,11 +6,24 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Configure Cloudinary
+// Configure Cloudinary with validation for production
+const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+const apiKey = process.env.CLOUDINARY_API_KEY;
+const apiSecret = process.env.CLOUDINARY_API_SECRET;
+
+if (process.env.NODE_ENV === 'production') {
+  if (!cloudName || !apiKey || !apiSecret) {
+    console.error('[GikpsMail] ERROR: Cloudinary credentials missing in production!');
+    console.error('  CLOUDINARY_CLOUD_NAME:', cloudName ? 'SET' : 'MISSING');
+    console.error('  CLOUDINARY_API_KEY:', apiKey ? 'SET' : 'MISSING');
+    console.error('  CLOUDINARY_API_SECRET:', apiSecret ? 'SET' : 'MISSING');
+  }
+}
+
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: cloudName || 'demo',
+  api_key: apiKey || 'demo',
+  api_secret: apiSecret || 'demo',
 });
 
 const UPLOAD_DIR = path.join(process.cwd(), 'uploads');

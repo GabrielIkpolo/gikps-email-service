@@ -1,23 +1,35 @@
+// CRITICAL: Create logs directory BEFORE any imports that might use it
+import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const logsDir = path.join(__dirname, '../../logs');
+if (!fs.existsSync(logsDir)) {
+  fs.mkdirSync(logsDir, { recursive: true });
+}
+
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import helmet from 'helmet';
-import rateLimit from 'express-rate-limit';
+// import rateLimit from 'express-rate-limit'; // DISABLED - causing deployment issues
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import emailRoutes from './routes/emailRoutes.js';
 import AppError from './utils/errors.js';
 import logger from './utils/logger.js';
+import prisma from './config/db.js';
 
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 
-app.set('trust proxy', 'loopback');
+app.set('trust proxy', false);
 
 
 // Security: Helmet sets secure HTTP headers
@@ -42,18 +54,20 @@ app.use(helmet({
   },
 }));
 
-// Rate limiting middleware
+// Rate limiting - DISABLED FOR NOW (causing deployment issues)
+// TODO: Re-enable with proper configuration after debugging
+/*
 const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: { status: 'error', error: 'Too many requests, please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // Limit each IP to 10 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 10,
   message: { status: 'error', error: 'Too many authentication attempts. Please try again after 15 minutes.' },
   skipSuccessfulRequests: true,
   standardHeaders: true,
@@ -61,35 +75,34 @@ const authLimiter = rateLimit({
 });
 
 const registerLimiter = rateLimit({
-  windowMs: 30 * 60 * 1000, // 30mins
-  max: 10, // Limit each IP to 10 registration attempts per hour
+  windowMs: 30 * 60 * 1000,
+  max: 10,
   message: { status: 'error', error: 'Too many registration attempts. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const resetLimiter = rateLimit({
-  windowMs: 30 * 60 * 1000, // 30mins
-  max: 10, // Limit each IP to 10 password reset requests per hour
+  windowMs: 30 * 60 * 1000,
+  max: 10,
   message: { status: 'error', error: 'Too many password reset requests. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
-// Apply rate limiters to specific routes
 app.use('/api/auth/register', registerLimiter);
 app.use('/api/auth/login', authLimiter);
 app.use('/api/auth/forgot-password', resetLimiter);
 app.use('/api/auth/reset-password', resetLimiter);
-
-// General rate limiter for all other routes
 app.use(generalLimiter);
+*/
 
 // Serve static files (for attachments in development)
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // Initialize Socket.io with restricted CORS
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173')
+// IMPORTANT: Add ALLOWED_ORIGINS to Render env vars for production!
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,https://gikps-email-service.onrender.com,https://gikps-email-service-1.onrender.com')
   .split(',')
   .map(o => o.trim())
   .filter(Boolean);
@@ -162,7 +175,24 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
-server.listen(PORT, () => {
-  logger.info(`App running on port ${PORT}...`);
-});
+// Test MongoDB connection before starting server
+async function startServer() {
+  try {
+    // Test database connection
+    await prisma.$connect();
+    logger.info('✅ MongoDB connected successfully');
+    
+    const PORT = process.env.PORT || 3001;
+    server.listen(PORT, () => {
+      logger.info(`🚀 App running on port ${PORT}...`);
+      logger.info(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
+      logger.info(`🌐 Allowed origins: ${allowedOrigins.join(', ')}`);
+    });
+  } catch (err) {
+    logger.error('❌ Failed to connect to MongoDB:', err.message);
+    logger.error('Server cannot start without database connection.');
+    process.exit(1);
+  }
+}
+
+startServer();

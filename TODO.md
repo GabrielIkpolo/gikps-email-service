@@ -38,9 +38,9 @@
 ### [x] Task 2.2: Add Rate Limiting ✅ DONE
 **File:** `backend/src/index.js`
 - Install and configure `express-rate-limit` ✅
-- Login: 5 attempts per 15 minutes ✅
-- Registration: 3 attempts per hour ✅
-- Password reset: 3 attempts per hour ✅
+- Login: 10 attempts per 15 minutes ✅
+- Registration: 10 attempts per 30 mins ✅
+- Password reset: 10 attempts per 30 mins ✅
 
 ### [x] Task 2.3: Remove Debug Token Exposure ✅ DONE
 **File:** `backend/src/controllers/authController.js`
