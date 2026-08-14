@@ -83,3 +83,5 @@
 {"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:48"}
 {"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
 {"level":"error","message":"FAIL 404: Recipient email address not found in GikpsMail","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-08-14 09:35:20"}
+{"level":"error","message":"FAIL 401: Incorrect username or password","service":"gikpsmail-service","timestamp":"2026-08-14 09:35:24"}

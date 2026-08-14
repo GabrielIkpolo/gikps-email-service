@@ -3,9 +3,52 @@ import AppError from '../utils/errors.js';
 import { uploadFile, deleteFile } from '../utils/storage.js';
 import logger from '../utils/logger.js';
 import crypto from 'crypto';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Email encryption key (loaded from environment)
-const EMAIL_ENCRYPTION_KEY = process.env.EMAIL_ENCRYPTION_KEY || crypto.randomBytes(32).toString('hex');
+// Resolve paths for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ENV_PATH = path.resolve(__dirname, '../../.env');
+
+/**
+ * Ensure EMAIL_ENCRYPTION_KEY exists in .env file.
+ * If missing (e.g., fresh install or manual .env), generate and persist one.
+ * This prevents the "new random key on every restart" bug that breaks decryption.
+ */
+function ensureEncryptionKeyInEnv() {
+  try {
+    if (!fs.existsSync(ENV_PATH)) return null;
+    const envContent = fs.readFileSync(ENV_PATH, 'utf8');
+    // Check if EMAIL_ENCRYPTION_KEY is already set (non-empty)
+    const keyMatch = envContent.match(/^EMAIL_ENCRYPTION_KEY=(.+)$/m);
+    if (keyMatch && keyMatch[1].trim()) {
+      return keyMatch[1].trim().replace(/^["']|["']$/g, '');
+    }
+    // Key is missing or empty — generate and write it
+    const newKey = crypto.randomBytes(32).toString('hex');
+    if (keyMatch) {
+      // Replace existing empty/placeholder line
+      const updated = envContent.replace(
+        /^EMAIL_ENCRYPTION_KEY=.+$/m,
+        `EMAIL_ENCRYPTION_KEY=${newKey}`
+      );
+      fs.writeFileSync(ENV_PATH, updated);
+    } else {
+      // Append the key to .env
+      fs.appendFileSync(ENV_PATH, `\nEMAIL_ENCRYPTION_KEY=${newKey}\n`);
+    }
+    return newKey;
+  } catch (err) {
+    console.error('[GikpsMail] WARNING: Could not persist EMAIL_ENCRYPTION_KEY to .env:', err.message);
+    // Fallback: use a runtime-only key (will still break on restart, but better than silent failure)
+    return crypto.randomBytes(32).toString('hex');
+  }
+}
+
+// Email encryption key — always loaded from environment or persisted on first run
+const EMAIL_ENCRYPTION_KEY = process.env.EMAIL_ENCRYPTION_KEY || ensureEncryptionKeyInEnv() || crypto.randomBytes(32).toString('hex');
 
 /**
  * Encrypt email content using AES-256-GCM
@@ -38,9 +81,10 @@ function decryptContent(encryptedJson) {
 }
 
 /**
- * Sanitize email data - remove internal IDs before sending to client
+ * Sanitize email data - remove internal IDs before sending to client.
+ * Adds an `isMine` flag so the frontend can display "Me" without exposing senderId/receiverId.
  */
-function sanitizeEmail(email) {
+function sanitizeEmail(email, currentUserId) {
   if (!email) return null;
   const { senderId, receiverId, ...sanitized } = email;
   // Remove any raw ID fields that shouldn't be exposed
@@ -54,6 +98,8 @@ function sanitizeEmail(email) {
     username: email.receiver.username,
     email: email.receiver.email,
   } : null;
+  // Flag for the frontend to know if this email belongs to the current user
+  sanitized.isMine = String(senderId) === String(currentUserId);
   return sanitized;
 }
 
@@ -147,23 +193,24 @@ export const sendEmailJson = async (req, res, next) => {
       }
     });
 
-    // Emit real-time event with sanitized data
+    // Emit real-time event with sanitized data (no internal IDs exposed)
     const io = req.app.get('io');
     if (io) {
-      const sanitizedEmail = sanitizeEmail(email);
+      const sanitizedReceiver = sanitizeEmail(email, email.receiverId);
+      const sanitizedSender = sanitizeEmail(email, senderId);
       io.to(`user_${email.receiverId}`).emit('new-email', {
         type: 'received',
-        email: sanitizedEmail
+        email: sanitizedReceiver
       });
       io.to(`user_${senderId}`).emit('new-email', {
         type: 'sent',
-        email: sanitizedEmail
+        email: sanitizedSender
       });
     }
 
     res.status(201).json({
       status: 'success',
-      data: { email: sanitizeEmail(email) },
+      data: { email: sanitizeEmail(email, senderId) },
       messageId: email.id
     });
   } catch (err) {
@@ -248,23 +295,24 @@ export const sendEmail = async (req, res, next) => {
       }
     });
 
-    // Emit real-time event with sanitized data
+    // Emit real-time event with sanitized data (no internal IDs exposed)
     const io = req.app.get('io');
     if (io) {
-      const sanitizedEmail = sanitizeEmail(email);
+      const sanitizedReceiver = sanitizeEmail(email, email.receiverId);
+      const sanitizedSender = sanitizeEmail(email, senderId);
       io.to(`user_${email.receiverId}`).emit('new-email', {
         type: 'received',
-        email: sanitizedEmail
+        email: sanitizedReceiver
       });
       io.to(`user_${senderId}`).emit('new-email', {
         type: 'sent',
-        email: sanitizedEmail
+        email: sanitizedSender
       });
     }
 
     res.status(201).json({
       status: 'success',
-      data: { email: sanitizeEmail(email) }
+      data: { email: sanitizeEmail(email, senderId) }
     });
   } catch (err) {
     if (err.code === 'P2025' || err.code === 'P2023') {
@@ -275,15 +323,17 @@ export const sendEmail = async (req, res, next) => {
 };
 
 /**
- * Decrypt and sanitize an email for client display
+ * Decrypt and sanitize an email for client display.
+ * Removes internal IDs, decrypts content, and adds isMine flag.
  */
-function decryptAndSanitizeEmail(email) {
+function decryptAndSanitizeEmail(email, currentUserId) {
   if (!email) return null;
   const { senderId, receiverId, ...rest } = email;
   return {
     ...rest,
     text: decryptContent(rest.text),
     html: decryptContent(rest.html),
+    isMine: String(senderId) === String(currentUserId),
     sender: email.sender ? {
       fullName: email.sender.fullName || 'Unknown',
       username: email.sender.username,
@@ -328,7 +378,7 @@ export const getInbox = async (req, res, next) => {
       }
     });
 
-    const sanitizedEmails = emails.map(decryptAndSanitizeEmail);
+    const sanitizedEmails = emails.map(email => decryptAndSanitizeEmail(email, userId));
 
     res.status(200).json({
       status: 'success',
@@ -376,7 +426,7 @@ export const getSent = async (req, res, next) => {
       }
     });
 
-    const sanitizedEmails = emails.map(decryptAndSanitizeEmail);
+    const sanitizedEmails = emails.map(email => decryptAndSanitizeEmail(email, userId));
 
     res.status(200).json({
       status: 'success',
@@ -425,7 +475,7 @@ export const getEmail = async (req, res, next) => {
       return next(new AppError('No email found with that ID', 404));
     }
 
-    const sanitizedEmail = decryptAndSanitizeEmail(email);
+    const sanitizedEmail = decryptAndSanitizeEmail(email, userId);
 
     res.status(200).json({
       status: 'success',
