@@ -1,0 +1,119 @@
+/* ============================================
+   Legal Pages Styles (Terms, Privacy, AUP)
+   ============================================ */
+
+.legal-page-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 3rem 1.5rem;
+}
+
+.legal-page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.legal-page-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.legal-updated {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.legal-section {
+  margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.legal-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-section p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.legal-section ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-section li {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 0.375rem;
+}
+
+/* Bold/disclaimer text */
+.legal-section p strong {
+  color: var(--error-color);
+  font-weight: 700;
+}
+
+/* Back button for legal pages */
+.legal-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.legal-back-btn:hover {
+  background-color: var(--surface-elevated);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legal-page-container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .legal-page-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .legal-page-content h1 {
+    font-size: 1.875rem;
+  }
+
+  .legal-section h2 {
+    font-size: 1.125rem;
+  }
+}

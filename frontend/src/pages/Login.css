@@ -1,49 +1,29 @@
-:root {
-  --primary-color: #001A4D;
-  --secondary-color: #9999CC;
-  --bg-color: #F8F9FA;
-  --surface-color: #FFFFFF;
-  --text-color: #111827;
-  --text-muted: #6B7280;
-  --border-color: #E5E7EB;
-  --accent-color: #24246D;
-  --error-color: #EF4444;
-  --success-color: #10B981;
-}
-
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--bg-color);
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 .login-card {
   background: var(--surface-color);
   padding: 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
   width: 100%;
   max-width: 420px;
   animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .login-title {
@@ -61,13 +41,13 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .form-group label {
@@ -79,51 +59,49 @@
 .form-group input {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   font-size: 1rem;
-  transition: all 0.2s;
-  background-color: #fafafa;
+  transition: all var(--transition-fast);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--secondary-color);
-  background-color: var(--surface-color);
-  box-shadow: 0 0 0 4px rgba(153, 153, 204, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
 }
 
 .login-button {
-  padding: 0.75rem;
-  background-color: var(--primary-color);
+  padding: 0.875rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all var(--transition-normal);
   margin-top: 0.5rem;
 }
 
-.login-button:hover {
-  background-color: var(--accent-color);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-.login-button:active {
+.login-button:active:not(:disabled) {
   transform: translateY(0);
 }
 
 .login-button:disabled {
-  background-color: var(--text-muted);
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
 .login-footer {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   text-align: center;
   font-size: 0.875rem;
   color: var(--text-muted);
@@ -131,10 +109,20 @@
 
 .login-footer a {
   color: var(--primary-color);
-  text-decoration: none;
   font-weight: 600;
 }
 
 .login-footer a:hover {
   text-decoration: underline;
+}
+
+/* Form error banner */
+.form-error-banner {
+  padding: 0.75rem 1rem;
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--error-color);
 }

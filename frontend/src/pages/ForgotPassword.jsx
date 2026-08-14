@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { forgotPassword } from '../api/authApi';
 import './ForgotPassword.css';
@@ -7,12 +7,25 @@ import './ForgotPassword.css';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email) {
+    setError('');
+
+    if (!email.trim()) {
       toast.error('Email is required');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address');
       return;
     }
 
@@ -21,10 +34,11 @@ const ForgotPassword = () => {
     try {
       await forgotPassword(email);
       toast.success('If an account with that email exists, a reset link has been sent.');
-      navigate('/login');
+      setTimeout(() => navigate('/login'), 3000);
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Failed to request password reset. Please try again.';
       toast.error(errorMessage);
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -38,6 +52,10 @@ const ForgotPassword = () => {
           <p className="forgot-password-subtitle">Enter your email address and we'll send you a link to reset your password.</p>
         </div>
 
+        {error && (
+          <div className="form-error-banner" role="alert">{error}</div>
+        )}
+
         <form onSubmit={handleSubmit} className="forgot-password-form">
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
@@ -48,6 +66,7 @@ const ForgotPassword = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
               required
             />
           </div>

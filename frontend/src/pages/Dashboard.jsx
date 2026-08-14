@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { getInbox, getSent, updateEmailStatus, deleteEmail } from '../api/mailApi';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { io } from 'socket.io-client';
 import { 
@@ -26,6 +27,7 @@ import './Dashboard.css';
 
 const Dashboard = () => {
   const { user, logout, updateUser } = useAuth();
+  const { theme } = useTheme();
   const [emails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState(null);
   const [view, setView] = useState('inbox'); // 'inbox', 'sent'
@@ -347,7 +349,7 @@ const Dashboard = () => {
                   <span className="author-name">From: </span>
                   <span className="author-email">
                     {selectedEmail.sender?.fullName || selectedEmail.sender?.username || (selectedEmail.senderId === user?.id ? 'Me' : 'Someone')}
-                    ({selectedEmail.sender?.email || selectedEmail.senderId})
+                    ({selectedEmail.sender?.email})
                   </span>
                 </div>
                 <div className="email-date">

@@ -326,13 +326,14 @@ export const forgotPassword = async (req, res, next) => {
       },
     });
 
-    logger.info(`Password reset request for user: ${user.email}. Token: ${resetToken}`);
+    // Log only the email (not the token) for debugging
+    if (process.env.NODE_ENV === 'development') {
+      logger.info(`Password reset requested for user: ${user.email}`);
+    }
     // In a real app, you would send this via email.
-    // For now, we include it in the response to facilitate testing.
     res.status(200).json({
       status: 'success',
-      message: 'If an account with that email exists, a reset link has has been sent.',
-      debugToken: resetToken, // ONLY FOR TESTING
+      message: 'If an account with that email exists, a reset link has been sent.',
     });
   } catch (err) {
     if (err instanceof z.ZodError) {

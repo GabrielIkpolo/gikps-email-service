@@ -13,6 +13,12 @@ router.patch('/change-password', authenticate, authController.changePassword);
 router.patch('/me', authenticate, authController.updateMe);
 router.get('/me', authenticate, authController.getMe);
 router.get('/check-username/:username', authController.checkUsername);
-router.get('/verify', validateApiKey, authController.getMe); // Added for adapter verification
+// Health check endpoint for adapter - returns minimal info only
+router.get('/verify', validateApiKey, (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'GikpsMail API is operational'
+  });
+});
 
 export default router;

@@ -1,35 +1,41 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import PasswordInput from '../components/PasswordInput';
 import { toast } from 'react-hot-toast';
 import './Login.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
   const { login } = useAuth();
 
   const handleChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setCredentials(prev => ({ ...prev, [name]: value }));
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const validate = () => {
+    const newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!credentials.username) {
-      toast.error('Username is required');
-      return false;
+    if (!credentials.username.trim()) {
+      newErrors.username = 'Username or email is required';
+    } else if (credentials.username.includes('@') && !emailRegex.test(credentials.username)) {
+      newErrors.username = 'Please enter a valid email address';
     }
+
     if (!credentials.password) {
-      toast.error('Password is required');
-      return false;
+      newErrors.password = 'Password is required';
     }
-    // If it looks like an email, validate it
-    if (credentials.username.includes('@') && !emailRegex.test(credentials.username)) {
-      toast.error('Please enter a valid email address');
-      return false;
-    }
-    return true;
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
@@ -44,6 +50,7 @@ const Login = () => {
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Login failed. Please check your credentials.';
       toast.error(errorMessage);
+      setErrors({ form: errorMessage });
     } finally {
       setLoading(false);
     }
@@ -57,6 +64,10 @@ const Login = () => {
           <p className="login-subtitle">Welcome back! Please enter your details.</p>
         </div>
 
+        {errors.form && (
+          <div className="form-error-banner" role="alert">{errors.form}</div>
+        )}
+
         <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
             <label htmlFor="username">Username or Email</label>
@@ -64,24 +75,27 @@ const Login = () => {
               type="text"
               id="username"
               name="username"
-              placeholder="Enter your username"
+              placeholder="Enter your username or email"
               value={credentials.username}
               onChange={handleChange}
-              required
+              autoComplete="username"
+              aria-invalid={!!errors.username}
             />
+            {errors.username && <span className="field-error">{errors.username}</span>}
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="••••••••"
-              value={credentials.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
+
+          <PasswordInput
+            id="login-password"
+            name="password"
+            label="Password"
+            value={credentials.password}
+            onChange={handleChange}
+            placeholder="••••••••"
+            required
+            showStrength={false}
+            error={errors.password}
+          />
+
           <button type="submit" className="login-button" disabled={loading}>
             {loading ? (
               <span className="loading-text">Signing in...</span>

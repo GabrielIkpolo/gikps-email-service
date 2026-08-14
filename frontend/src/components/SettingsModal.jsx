@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import { changePassword, updateMe, getMe } from '../api/authApi';
+import { changePassword, updateMe } from '../api/authApi';
 import { useAuth } from '../context/AuthContext';
-import { HiX, HiCheck } from 'react-icons/hi';
+import { useTheme } from '../context/ThemeContext';
+import PasswordInput from './PasswordInput';
+import { HiX, HiCheck, HiSun, HiMoon } from 'react-icons/hi';
 import './SettingsModal.css';
 
 const SettingsModal = ({ isOpen, onClose }) => {
   const { user, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState('profile'); // 'profile', 'security'
+  const { theme, toggleTheme } = useTheme();
+  const [activeTab, setActiveTab] = useState('profile'); // 'profile', 'security', 'appearance'
   const [loading, setLoading] = useState(false);
-  const [profileData, setProfileData] = useState({
-    fullName: '',
-  });
+  const [profileData, setProfileData] = useState({ fullName: '' });
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
     newPassword: '',
@@ -27,10 +28,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
 
   const handleProfileInputChange = (e) => {
     const { name, value } = e.target;
-    setProfileData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setProfileData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleProfileSubmit = async (e) => {
@@ -40,7 +38,6 @@ const SettingsModal = ({ isOpen, onClose }) => {
     try {
       await updateMe({ fullName: profileData.fullName });
       toast.success('Profile updated successfully!');
-      // We don't close the modal automatically so user can see the success
     } catch (err) {
       console.error('Error updating profile:', err);
       toast.error(err.response?.data?.error || 'Failed to update profile');
@@ -51,10 +48,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
 
   const handlePasswordInputChange = (e) => {
     const { name, value } = e.target;
-    setPasswordData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setPasswordData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmitPasswordChange = async (e) => {
@@ -65,7 +59,6 @@ const SettingsModal = ({ isOpen, onClose }) => {
       await changePassword(passwordData);
       toast.success('Password updated successfully!');
       setPasswordData({ currentPassword: '', newPassword: '' });
-      onClose();
     } catch (err) {
       console.error('Error changing password:', err);
       toast.error(err.response?.data?.error || 'Failed to update password');
@@ -97,6 +90,12 @@ const SettingsModal = ({ isOpen, onClose }) => {
               onClick={() => setActiveTab('security')}
             >
               Security
+            </button>
+            <button 
+              className={`settings-tab-item ${activeTab === 'appearance' ? 'active' : ''}`}
+              onClick={() => setActiveTab('appearance')}
+            >
+              Appearance
             </button>
           </aside>
 
@@ -148,18 +147,16 @@ const SettingsModal = ({ isOpen, onClose }) => {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="newPassword">New Password</label>
-                    <input
-                      type="password"
-                      id="newPassword"
-                      name="newPassword"
-                      value={passwordData.newPassword}
-                      onChange={handlePasswordInputChange}
-                      required
-                    />
-                    <small>Must be at least 8 characters long.</small>
-                  </div>
+                  <PasswordInput
+                    id="newPassword"
+                    name="newPassword"
+                    label="New Password"
+                    value={passwordData.newPassword}
+                    onChange={handlePasswordInputChange}
+                    placeholder="••••••••"
+                    required
+                    showStrength={true}
+                  />
 
                   <button 
                     type="submit" 
@@ -170,6 +167,44 @@ const SettingsModal = ({ isOpen, onClose }) => {
                     {!loading && <HiCheck className="submit-icon" />}
                   </button>
                 </form>
+              </div>
+            )}
+
+            {activeTab === 'appearance' && (
+              <div className="settings-tab-content">
+                <h3>Appearance</h3>
+                <p className="settings-info-text">Customize how GikpsMail looks for you.</p>
+                
+                <div className="appearance-options">
+                  <div className="theme-selector">
+                    <label className="theme-label">Theme</label>
+                    <button 
+                      className={`theme-toggle-modal ${theme === 'dark' ? 'active' : ''}`}
+                      onClick={toggleTheme}
+                      aria-label="Toggle dark mode"
+                    >
+                      {theme === 'dark' ? (
+                        <>
+                          <HiMoon size={20} />
+                          <span>Dark Mode</span>
+                        </>
+                      ) : (
+                        <>
+                          <HiSun size={20} />
+                          <span>Light Mode</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  
+                  <div className="theme-preview">
+                    <p className="settings-info-text" style={{ fontSize: '0.8125rem' }}>
+                      {theme === 'dark' 
+                        ? 'Dark mode is active. The interface uses darker colors to reduce eye strain in low-light environments.'
+                        : 'Light mode is active. The interface uses bright colors for optimal readability in well-lit environments.'}
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
           </main>
