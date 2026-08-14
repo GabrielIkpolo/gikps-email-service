@@ -56,7 +56,7 @@ app.use(helmet({
 
 // Rate limiting - DISABLED FOR NOW (causing deployment issues)
 // TODO: Re-enable with proper configuration after debugging
-
+/*
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -96,6 +96,7 @@ app.use('/api/auth/forgot-password', resetLimiter);
 app.use('/api/auth/reset-password', resetLimiter);
 app.use(generalLimiter);
 
+*/
 
 // Serve static files (for attachments in development)
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
