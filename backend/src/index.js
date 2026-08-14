@@ -15,7 +15,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import helmet from 'helmet';
-import rateLimit from 'express-rate-limit'; // DISABLED - causing deployment issues
+import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -29,7 +29,9 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-app.set('trust proxy', false);
+// CRITICAL: Trust proxy for Render's load balancer to get real client IPs
+// This is required for rate limiting to work correctly on Render
+app.set('trust proxy', 1);
 
 
 // Security: Helmet sets secure HTTP headers
@@ -54,49 +56,49 @@ app.use(helmet({
   },
 }));
 
-// Rate limiting - DISABLED FOR NOW (causing deployment issues)
-// TODO: Re-enable with proper configuration after debugging
-/*
+// Rate limiting - ENABLED with proper configuration for Render
+// Using memory store (default) - no Redis needed
 const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
   message: { status: 'error', error: 'Too many requests, please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
+  skipSuccessfulRequests: false,
 });
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // Limit each IP to 10 authentication attempts per windowMs
   message: { status: 'error', error: 'Too many authentication attempts. Please try again after 15 minutes.' },
-  skipSuccessfulRequests: true,
+  skipSuccessfulRequests: true, // Don't count successful logins against the limit
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const registerLimiter = rateLimit({
-  windowMs: 30 * 60 * 1000,
-  max: 10,
+  windowMs: 30 * 60 * 1000, // 30 minutes
+  max: 10, // Limit each IP to 10 registration attempts per windowMs
   message: { status: 'error', error: 'Too many registration attempts. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const resetLimiter = rateLimit({
-  windowMs: 30 * 60 * 1000,
-  max: 10,
+  windowMs: 30 * 60 * 1000, // 30 minutes
+  max: 5, // Limit each IP to 5 password reset requests per windowMs (stricter)
   message: { status: 'error', error: 'Too many password reset requests. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
 });
 
+// Apply rate limiters to specific routes
 app.use('/api/auth/register', registerLimiter);
 app.use('/api/auth/login', authLimiter);
 app.use('/api/auth/forgot-password', resetLimiter);
 app.use('/api/auth/reset-password', resetLimiter);
-app.use(generalLimiter);
-
-*/
+// General rate limiter for all other API routes
+app.use('/api/', generalLimiter);
 
 // Serve static files (for attachments in development)
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));

@@ -135,17 +135,16 @@ const SettingsModal = ({ isOpen, onClose }) => {
                 <p className="settings-info-text">Update your password and security credentials.</p>
                 
                 <form className="settings-form" onSubmit={handleSubmitPasswordChange}>
-                  <div className="form-group">
-                    <label htmlFor="currentPassword">Current Password</label>
-                    <input
-                      type="password"
-                      id="currentPassword"
-                      name="currentPassword"
-                      value={passwordData.currentPassword}
-                      onChange={handlePasswordInputChange}
-                      required
-                    />
-                  </div>
+                  <PasswordInput
+                    id="currentPassword"
+                    name="currentPassword"
+                    label="Current Password"
+                    value={passwordData.currentPassword}
+                    onChange={handlePasswordInputChange}
+                    placeholder="••••••••"
+                    required
+                    showStrength={false}
+                  />
 
                   <PasswordInput
                     id="newPassword"

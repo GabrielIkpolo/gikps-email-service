@@ -47,8 +47,34 @@ function ensureEncryptionKeyInEnv() {
   }
 }
 
-// Email encryption key — always loaded from environment or persisted on first run
-const EMAIL_ENCRYPTION_KEY = process.env.EMAIL_ENCRYPTION_KEY || ensureEncryptionKeyInEnv() || crypto.randomBytes(32).toString('hex');
+// Email encryption key — always loaded from environment or generated on first run
+// CRITICAL FIX: Validate that the key is exactly 64 hex characters (32 bytes for AES-256)
+function getValidEncryptionKey() {
+  const envKey = process.env.EMAIL_ENCRYPTION_KEY;
+  
+  // Check if we have a valid 64-char hex key from environment
+  if (envKey && /^[0-9a-f]{64}$/i.test(envKey)) {
+    return envKey;
+  }
+  
+  // If env var exists but is invalid length/format, log warning and generate new one
+  if (envKey) {
+    console.error(`[GikpsMail] WARNING: EMAIL_ENCRYPTION_KEY has invalid format (${envKey.length} chars). Must be exactly 64 hex characters.`);
+  }
+  
+  // Try to read from .env file as fallback (works in local dev, not on Render)
+  const fileKey = ensureEncryptionKeyInEnv();
+  if (fileKey && /^[0-9a-f]{64}$/i.test(fileKey)) {
+    return fileKey;
+  }
+  
+  // Final fallback: generate a new key at runtime
+  // NOTE: On Render, this will change on every restart. The .env in the repo should have a valid key.
+  console.warn('[GikpsMail] Generating new encryption key at runtime. Emails encrypted with previous keys may be undecryptable after restart.');
+  return crypto.randomBytes(32).toString('hex');
+}
+
+const EMAIL_ENCRYPTION_KEY = getValidEncryptionKey();
 
 /**
  * Encrypt email content using AES-256-GCM
