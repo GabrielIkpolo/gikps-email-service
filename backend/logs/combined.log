@@ -2559,3 +2559,32 @@
 {"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:34:52"}
 {"level":"info","message":"New client connected: fJkDAk4ttiXdOu_6AAAG","service":"gikpsmail-service","timestamp":"2026-08-14 10:34:52"}
 {"level":"info","message":"Socket fJkDAk4ttiXdOu_6AAAG joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:34:53"}
+{"level":"info","message":"DELETE /api/mail/6a01a606888e9c5ae4bd184d","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:08"}
+{"level":"info","message":"Attempting to delete email with ID: 6a01a606888e9c5ae4bd184d by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:09"}
+{"level":"info","message":"Email with ID 6a01a606888e9c5ae4bd184d deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:09"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:09"}
+{"level":"info","message":"DELETE /api/mail/6a7ec1e3efd764d7a46fd98b","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:13"}
+{"level":"info","message":"Attempting to delete email with ID: 6a7ec1e3efd764d7a46fd98b by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:13"}
+{"level":"info","message":"Email with ID 6a7ec1e3efd764d7a46fd98b deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:13"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:13"}
+{"level":"info","message":"DELETE /api/mail/6a7ec23fefd764d7a46fd98d","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:17"}
+{"level":"info","message":"Attempting to delete email with ID: 6a7ec23fefd764d7a46fd98d by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:17"}
+{"level":"info","message":"Email with ID 6a7ec23fefd764d7a46fd98d deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:17"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:17"}
+{"level":"info","message":"DELETE /api/mail/6a7ed3c52bc3fa5816e066cb","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:20"}
+{"level":"info","message":"Attempting to delete email with ID: 6a7ed3c52bc3fa5816e066cb by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:20"}
+{"level":"info","message":"Email with ID 6a7ed3c52bc3fa5816e066cb deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:20"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:20"}
+{"level":"info","message":"DELETE /api/mail/6a7ed4122bc3fa5816e066cc","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:25"}
+{"level":"info","message":"Attempting to delete email with ID: 6a7ed4122bc3fa5816e066cc by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:25"}
+{"level":"info","message":"Email with ID 6a7ed4122bc3fa5816e066cc deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:25"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:25"}
+{"level":"info","message":"Client disconnected: fJkDAk4ttiXdOu_6AAAG","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:29"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:29"}
+{"level":"info","message":"New client connected: 3Jkq3jGzrKHZ-ukpAAAI","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:30"}
+{"level":"info","message":"Socket 3Jkq3jGzrKHZ-ukpAAAI joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:30"}
+{"level":"info","message":"DELETE /api/mail/6a01a667888e9c5ae4bd184e","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:37"}
+{"level":"info","message":"Attempting to delete email with ID: 6a01a667888e9c5ae4bd184e by user: 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:37"}
+{"level":"info","message":"Email with ID 6a01a667888e9c5ae4bd184e deleted successfully by user 6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:37"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 10:36:37"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 10:54:56"}

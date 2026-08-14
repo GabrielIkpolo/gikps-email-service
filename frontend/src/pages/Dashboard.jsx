@@ -316,7 +316,7 @@ const Dashboard = () => {
                       </div>
                       <div className="email-item-main">
                         <div className="email-sender">
-                          {email.sender?.fullName || email.sender?.username || (email.senderId === user?.id ? 'Me' : 'Someone')}
+                          {email.isMine ? 'Me' : (email.sender?.fullName || email.sender?.username || 'Someone')}
                         </div>
                         <div className="email-subject">{email.subject}</div>
                         <div className="email-preview">{email.text?.substring(0, 80)}...</div>
@@ -348,7 +348,7 @@ const Dashboard = () => {
                 <div className="email-author">
                   <span className="author-name">From: </span>
                   <span className="author-email">
-                    {selectedEmail.sender?.fullName || selectedEmail.sender?.username || (selectedEmail.senderId === user?.id ? 'Me' : 'Someone')}
+                    {selectedEmail.isMine ? 'Me' : (selectedEmail.sender?.fullName || selectedEmail.sender?.username || 'Someone')}
                     ({selectedEmail.sender?.email})
                   </span>
                 </div>

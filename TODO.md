@@ -9,18 +9,20 @@
 - Ensure the adapter properly handles CORS for Render deployment ✅
 - Add proper error handling with nodemailer-compatible response format ✅
 
-### [ ] Task 1.2: Remove User ID Exposure from Email UI
-**File:** `frontend/src/pages/Dashboard.jsx`
-- Remove `senderId` display from email detail view
-- Sanitize all email data before rendering (remove internal IDs)
-- Ensure Socket.io events don't expose sensitive fields
+### [x] Task 1.2: Remove User ID Exposure from Email UI ✅ DONE
+**Files:** `frontend/src/pages/Dashboard.jsx` + `backend/src/controllers/emailController.js`
+- Removed `senderId`/`receiverId` exposure from email detail view ✅
+- Backend sanitization now strips internal IDs and adds `isMine` flag instead ✅
+- Socket.io events emit sanitized data (no raw IDs) ✅
+- Frontend uses `email.isMine` to display "Me" instead of comparing exposed IDs ✅
 
-### [ ] Task 1.3: Implement Email Content Encryption
+### [x] Task 1.3: Implement Email Content Encryption ✅ DONE
 **Files:** Backend + Database schema
-- Add field-level encryption for email text/html content using AES-256-GCM
-- Update Prisma schema to support encrypted fields
-- Encrypt emails on write, decrypt on read
-- Store encryption key in environment variables (never in DB)
+- Add field-level encryption for email text/html content using AES-256-GCM ✅
+- Update Prisma schema to support encrypted fields ✅
+- Encrypt emails on write, decrypt on read ✅
+- Store encryption key in environment variables (never in DB) ✅
+- **CRITICAL FIX:** Encryption key now persists across server restarts via `.env` file. Previously, a new random key was generated each restart, breaking decryption of all stored messages.
 
 ---
 
@@ -33,29 +35,27 @@
 - Check against common password list
 - Add real-time strength meter in UI
 
-### [ ] Task 2.2: Add Rate Limiting
+### [x] Task 2.2: Add Rate Limiting ✅ DONE
 **File:** `backend/src/index.js`
-- Install and configure `express-rate-limit`
-- Login: 5 attempts per 15 minutes
-- Registration: 3 attempts per hour  
-- Password reset: 3 attempts per hour
+- Install and configure `express-rate-limit` ✅
+- Login: 5 attempts per 15 minutes ✅
+- Registration: 3 attempts per hour ✅
+- Password reset: 3 attempts per hour ✅
 
-### [ ] Task 2.3: Remove Debug Token Exposure
+### [x] Task 2.3: Remove Debug Token Exposure ✅ DONE
 **File:** `backend/src/controllers/authController.js`
-- Remove `debugToken` from response
-- Remove plaintext token from logger
-- Add environment check to only log in development mode
+- No debug tokens found in codebase ✅
 
 ### [ ] Task 2.4: Fix API Key Verify Endpoint
 **File:** `backend/src/routes/authRoutes.js` + controller
 - Return minimal data (just status, no user details)
 - OR create a dedicated `/api/mail/health` endpoint for adapter verification
 
-### [ ] Task 2.5: Add Helmet Security Headers
+### [x] Task 2.5: Add Helmet Security Headers ✅ DONE
 **File:** `backend/src/index.js`
-- Install `helmet` package
-- Configure Content-Security-Policy
-- Disable X-Frame-Options, X-Content-Type-Options, etc.
+- Install `helmet` package ✅
+- Configure Content-Security-Policy ✅
+- Disable X-Frame-Options, X-Content-Type-Options, etc. ✅
 
 ---
 
