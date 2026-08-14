@@ -17,6 +17,9 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
+app.set('trust proxy', true);
+
+
 // Security: Helmet sets secure HTTP headers
 app.use(helmet({
   contentSecurityPolicy: {
