@@ -2411,3 +2411,52 @@
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 08:23:36"}
 {"level":"info","message":"New client connected: XaXHzxb5G-NAz6eeAAAG","service":"gikpsmail-service","timestamp":"2026-08-14 08:23:36"}
 {"level":"info","message":"Socket XaXHzxb5G-NAz6eeAAAG joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 08:23:36"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:25:17"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:35:17"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:39:38"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:39:38"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:43:14"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:46"}
+{"level":"info","message":"New client connected: 1MkgqPw543CEacQsAAAB","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:47"}
+{"level":"info","message":"Socket 1MkgqPw543CEacQsAAAB joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:47"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:48"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:48"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 08:58:16"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 09:02:05"}
+{"level":"info","message":"New client connected: TBm1wKd3s2Y1fRJqAAAB","service":"gikpsmail-service","timestamp":"2026-08-14 09:02:07"}
+{"level":"info","message":"Socket TBm1wKd3s2Y1fRJqAAAB joined room: user_6a01a1f9e2eb831565a844ba","service":"gikpsmail-service","timestamp":"2026-08-14 09:02:07"}
+{"level":"info","message":"Client disconnected: TBm1wKd3s2Y1fRJqAAAB","service":"gikpsmail-service","timestamp":"2026-08-14 09:04:45"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 09:12:52"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 09:12:56"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 09:14:01"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:14:01"}
+{"level":"info","message":"App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:42"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"GET /api/auth/verify","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"POST /api/mail/send-json","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"error","message":"FAIL 404: Recipient email address not found in GikpsMail","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"info","message":"GET /api/mail/inbox","service":"gikpsmail-service","timestamp":"2026-08-14 09:24:31"}

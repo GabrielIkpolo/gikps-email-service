@@ -80,3 +80,6 @@
 {"level":"error","message":"ERROR 500: attachments is not defined","service":"gikpsmail-service","timestamp":"2026-08-14 07:13:06"}
 {"level":"error","message":"ERROR 500: attachments is not defined","service":"gikpsmail-service","timestamp":"2026-08-14 07:13:20"}
 {"level":"error","message":"FAIL 404: Can't find /favicon.ico on this server!","service":"gikpsmail-service","timestamp":"2026-08-14 08:22:49"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 08:57:48"}
+{"level":"error","message":"FAIL 403: Invalid or missing API Key","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}
+{"level":"error","message":"FAIL 404: Recipient email address not found in GikpsMail","service":"gikpsmail-service","timestamp":"2026-08-14 09:19:46"}

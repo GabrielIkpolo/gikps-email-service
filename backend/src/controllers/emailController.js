@@ -68,11 +68,33 @@ export const sendEmailJson = async (req, res, next) => {
       return next(new AppError('Recipient (to) and Subject are required', 400));
     }
 
-    // For adapter requests, the sender is determined by the API key context
-    // We look up the user associated with this request or use a system sender
-    const senderId = req.user?.id;
+    // For adapter requests (API key auth), we need a system sender
+    // For JWT auth, use req.user.id from the authenticate middleware
+    let senderId = req.user?.id;
+    
     if (!senderId) {
-      return next(new AppError('Authentication required for sending emails', 401));
+      // API Key auth path: look up or create a system sender user
+      // This allows external apps to send emails without JWT tokens
+      const systemUser = await prisma.user.findFirst({
+        where: { email: 'system@gikpsmail.com' }
+      });
+      
+      if (systemUser) {
+        senderId = systemUser.id;
+      } else {
+        // Create a system user for API-based sends
+        const bcrypt = await import('bcryptjs');
+        const hashedPassword = await bcrypt.hash('system-api-key', 10);
+        const newUser = await prisma.user.create({
+          data: {
+            username: 'system_api',
+            email: 'system@gikpsmail.com',
+            password: hashedPassword,
+            fullName: 'System API'
+          }
+        });
+        senderId = newUser.id;
+      }
     }
 
     let processedAttachments = [];
