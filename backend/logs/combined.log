@@ -2699,3 +2699,17 @@
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 18:10:59"}
 {"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 18:10:59"}
 {"level":"info","message":"Socket XKB-OQNa8fy40g_MAAAE joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-14 18:10:59"}
+{"level":"info","message":"✅ MongoDB connected successfully","service":"gikpsmail-service","timestamp":"2026-08-14 23:21:32"}
+{"level":"info","message":"🚀 App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-14 23:21:32"}
+{"level":"info","message":"📝 Environment: development","service":"gikpsmail-service","timestamp":"2026-08-14 23:21:32"}
+{"level":"info","message":"🌐 Allowed origins: http://localhost:5173, https://gikps-email-service.onrender.com, https://gikps-email-service-1.onrender.com","service":"gikpsmail-service","timestamp":"2026-08-14 23:21:32"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"New client connected: yGNHCman2Co4yPSLAAAC","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"Socket yGNHCman2Co4yPSLAAAC joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:00"}
+{"level":"info","message":"Client disconnected: yGNHCman2Co4yPSLAAAC","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:08"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:08"}
+{"level":"info","message":"New client connected: 8I_veI6JdteFkF_dAAAE","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:08"}
+{"level":"info","message":"Socket 8I_veI6JdteFkF_dAAAE joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-14 23:22:08"}
