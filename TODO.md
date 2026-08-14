@@ -28,19 +28,19 @@
 
 ## Phase 6: Render Deployment Fixes (CRITICAL)
 
-### [x] Task 6.1: Fix AES-256 Encryption Key Length on Render ✅ DONE
+### [x] Task 6.1: Fix AES-256 Encryption Key Length on Render
 **File:** `backend/src/controllers/emailController.js`
 - Validate EMAIL_ENCRYPTION_KEY is exactly 64 hex chars (32 bytes) for AES-256-GCM ✅
 - Generate fallback key if env var is missing/invalid instead of writing to ephemeral .env ✅
 - Store validated key in a stable variable that persists across restarts ✅
 
-### [x] Task 6.2: Re-enable Rate Limiting for Render ✅ DONE
+### [x] Task 6.2: Re-enable Rate Limiting for Render
 **File:** `backend/src/index.js`
 - Set `trust proxy` to true for Render's load balancer ✅
 - Configure rate limiters with proper IP detection ✅
 - Use memory store as fallback (no Redis needed) ✅
 
-### [x] Task 6.3: Fix Password Visibility Toggle in SettingsModal ✅ DONE
+### [x] Task 6.3: Fix Password Visibility Toggle in SettingsModal
 **File:** `frontend/src/components/SettingsModal.jsx`
 - Replace raw password input with PasswordInput component for "Current Password" field ✅
 
