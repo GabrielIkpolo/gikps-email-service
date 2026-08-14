@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-app.set('trust proxy', true);
+app.set('trust proxy', 'loopback');
 
 
 // Security: Helmet sets secure HTTP headers
@@ -49,7 +49,6 @@ const generalLimiter = rateLimit({
   message: { status: 'error', error: 'Too many requests, please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
-   trustProxy: 1,
 });
 
 const authLimiter = rateLimit({
@@ -59,7 +58,6 @@ const authLimiter = rateLimit({
   skipSuccessfulRequests: true,
   standardHeaders: true,
   legacyHeaders: false,
-   trustProxy: 1,
 });
 
 const registerLimiter = rateLimit({
@@ -68,7 +66,6 @@ const registerLimiter = rateLimit({
   message: { status: 'error', error: 'Too many registration attempts. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
-   trustProxy: 1,
 });
 
 const resetLimiter = rateLimit({
@@ -77,7 +74,6 @@ const resetLimiter = rateLimit({
   message: { status: 'error', error: 'Too many password reset requests. Please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
-   trustProxy: 1,
 });
 
 // Apply rate limiters to specific routes
