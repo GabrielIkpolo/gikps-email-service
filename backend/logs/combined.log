@@ -2844,3 +2844,36 @@
 {"level":"info","message":"New client connected: htbSTFu-EzbPhHE_AAAG","service":"gikpsmail-service","timestamp":"2026-08-15 01:49:35"}
 {"level":"info","message":"Socket htbSTFu-EzbPhHE_AAAG joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-15 01:49:35"}
 {"level":"info","message":"Client disconnected: htbSTFu-EzbPhHE_AAAG","service":"gikpsmail-service","timestamp":"2026-08-15 01:49:44"}
+{"level":"info","message":"✅ MongoDB connected successfully","service":"gikpsmail-service","timestamp":"2026-08-15 09:43:06"}
+{"level":"info","message":"🚀 App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-15 09:43:06"}
+{"level":"info","message":"📝 Environment: development","service":"gikpsmail-service","timestamp":"2026-08-15 09:43:06"}
+{"level":"info","message":"🌐 Allowed origins: http://localhost:5173, https://gikps-email-service.onrender.com, https://gikps-email-service-1.onrender.com","service":"gikpsmail-service","timestamp":"2026-08-15 09:43:06"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"New client connected: hTNlAFZEkSdIqKKXAAAC","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"Socket hTNlAFZEkSdIqKKXAAAC joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-15 09:47:02"}
+{"level":"info","message":"✅ MongoDB connected successfully","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:16"}
+{"level":"info","message":"🚀 App running on port 3001...","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:16"}
+{"level":"info","message":"📝 Environment: development","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:16"}
+{"level":"info","message":"🌐 Allowed origins: http://localhost:5173, https://gikps-email-service.onrender.com, https://gikps-email-service-1.onrender.com","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:16"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:26"}
+{"level":"info","message":"GET /api/auth/me","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:26"}
+{"level":"info","message":"New client connected: ZukiuHfPS3K8NprUAAAD","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:27"}
+{"level":"info","message":"Socket ZukiuHfPS3K8NprUAAAD joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:27"}
+{"level":"info","message":"Client disconnected: ZukiuHfPS3K8NprUAAAD","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:35"}
+{"level":"info","message":"GET /api/mail/sent?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:35"}
+{"level":"info","message":"New client connected: e9Ah8jqN5klkz1qCAAAF","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:35"}
+{"level":"info","message":"Socket e9Ah8jqN5klkz1qCAAAF joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:35"}
+{"level":"info","message":"Client disconnected: e9Ah8jqN5klkz1qCAAAF","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:39"}
+{"level":"info","message":"New client connected: HF17aC2BTsALW-XYAAAH","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:39"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:39"}
+{"level":"info","message":"Socket HF17aC2BTsALW-XYAAAH joined room: user_69ff4c2f23118a98e179a210","service":"gikpsmail-service","timestamp":"2026-08-15 13:33:39"}
+{"level":"info","message":"POST /api/mail/send","service":"gikpsmail-service","timestamp":"2026-08-15 13:34:18"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:34:18"}
+{"level":"info","message":"PATCH /api/mail/6a805cca86c437f8b862a591","service":"gikpsmail-service","timestamp":"2026-08-15 13:34:27"}
+{"level":"info","message":"GET /api/mail/inbox?search=","service":"gikpsmail-service","timestamp":"2026-08-15 13:34:27"}

@@ -26,11 +26,17 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
-cloudinary.config({
-  cloud_name: hasValidCloudinary ? cloudName : 'demo',
-  api_key: hasValidCloudinary ? apiKey : 'demo',
-  api_secret: hasValidCloudinary ? apiSecret : 'demo',
-});
+// Always configure Cloudinary with real credentials if available
+// Using 'demo' values causes silent failures on Render
+if (hasValidCloudinary) {
+  cloudinary.config({
+    cloud_name: cloudName,
+    api_key: apiKey,
+    api_secret: apiSecret,
+  });
+} else {
+  console.warn('[GikpsMail] Cloudinary not configured. File uploads will use local storage only.');
+}
 
 // Determine the correct base URL for serving uploaded files
 const RENDER_APP_URL = process.env.RENDER_APP_URL || process.env.APP_URL;
@@ -63,14 +69,21 @@ export const uploadFile = async (file) => {
   const fileId = uuidv4();
   const filename = `${fileId}-${file.originalname}`;
 
-  // Try Cloudinary first if configured for production
+  // Try Cloudinary first if configured for production with valid credentials
   if (USE_CLOUDINARY) {
     try {
+      console.log(`[GikpsMail] Attempting Cloudinary upload: ${file.originalname} (${(file.size / 1024).toFixed(1)} KB)`);
+      
       const result = await new Promise((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
             resource_type: 'auto',
             public_id: fileId,
+            folder: 'gikpsmail',
+            transformation: [
+              { quality: 'auto' },
+              { fetch_format: 'auto' }
+            ]
           },
           (error, result) => {
             if (error) return reject(error);
@@ -80,7 +93,7 @@ export const uploadFile = async (file) => {
         uploadStream.end(file.buffer);
       });
 
-      console.log(`[GikpsMail] File uploaded to Cloudinary: ${file.originalname}`);
+      console.log(`[GikpsMail] ✅ File uploaded to Cloudinary: ${file.originalname}`);
       return {
         url: result.secure_url,
         filename: fileId,
@@ -88,23 +101,28 @@ export const uploadFile = async (file) => {
         size: file.size,
       };
     } catch (cloudinaryError) {
-      console.error(`[GikpsMail] Cloudinary upload failed for ${file.originalname}:`, cloudinaryError.message);
-      console.log('[GikpsMail] Falling back to local storage...');
-      // Fall through to local storage below
+      console.error(`[GikpsMail] ❌ Cloudinary upload failed for ${file.originalname}:`, cloudinaryError.message);
+      // Don't fall through - log the error and rethrow so the caller knows
+      throw new Error(`Cloudinary upload failed: ${cloudinaryError.message}`);
     }
   }
 
   // Save to local filesystem (works on Render for container lifetime)
-  const filePath = path.join(UPLOAD_DIR, filename);
-  fs.writeFileSync(filePath, file.buffer);
+  try {
+    const filePath = path.join(UPLOAD_DIR, filename);
+    fs.writeFileSync(filePath, file.buffer);
 
-  console.log(`[GikpsMail] File saved locally: ${file.originalname} -> ${filePath}`);
-  return {
-    url: `${APP_URL}/uploads/${filename}`,
-    filename: filename,
-    mimeType: file.mimetype,
-    size: file.size,
-  };
+    console.log(`[GikpsMail] ✅ File saved locally: ${file.originalname} (${(file.size / 1024).toFixed(1)} KB)`);
+    return {
+      url: `${APP_URL}/uploads/${filename}`,
+      filename: filename,
+      mimeType: file.mimetype,
+      size: file.size,
+    };
+  } catch (localError) {
+    console.error(`[GikpsMail] ❌ Local storage failed for ${file.originalname}:`, localError.message);
+    throw new Error(`File upload failed: ${localError.message}`);
+  }
 };
 
 /**

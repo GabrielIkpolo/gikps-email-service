@@ -260,10 +260,14 @@ export const sendEmail = async (req, res, next) => {
     // Handle attachments from multipart form data
     let processedAttachments = [];
     if (req.files && req.files.length > 0) {
-      for (const file of req.files) {
+      const uploadResults = [];
+      const uploadErrors = [];
+      
+      // Process all uploads in parallel for better performance on Render
+      await Promise.all(req.files.map(async (file) => {
         try {
           const uploaded = await uploadFile(file);
-          processedAttachments.push({
+          uploadResults.push({
             url: uploaded.url,
             filename: uploaded.filename,
             mimeType: uploaded.mimeType,
@@ -271,9 +275,15 @@ export const sendEmail = async (req, res, next) => {
           });
         } catch (uploadErr) {
           logger.error(`[GikpsMail] Failed to upload attachment ${file.originalname}:`, uploadErr.message);
-          // Don't fail the entire email if one attachment fails - skip it
-          console.warn(`[GikpsMail] Skipping failed attachment: ${file.originalname}`);
+          uploadErrors.push({ file: file.originalname, error: uploadErr.message });
         }
+      }));
+      
+      processedAttachments = uploadResults;
+      
+      // Log any failures but continue with successful uploads
+      if (uploadErrors.length > 0) {
+        console.warn(`[GikpsMail] ${uploadErrors.length} attachment(s) failed to upload:`, uploadErrors);
       }
     }
 

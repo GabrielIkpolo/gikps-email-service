@@ -1,24 +1,42 @@
 import apiClient from './client';
 
-export const sendEmail = async (emailData, attachments = []) => {
+/**
+ * Send email with optional file attachments.
+ * Supports cancellation via AbortController for the cancel button feature.
+ * @param {Object} emailData - Email data (to, subject, text)
+ * @param {File[]} attachments - Array of File objects to attach
+ * @param {AbortSignal} [signal] - Optional AbortSignal for cancellation
+ * @returns {Promise<Object>} - API response
+ */
+export const sendEmail = async (emailData, attachments = [], signal) => {
   const formData = new FormData();
   
   // Append simple fields
   formData.append('to', emailData.to);
   formData.append('subject', emailData.subject);
-  formData.append('text', emailData.text);
+  formData.append('text', emailData.text || '');
   formData.append('html', emailData.html || '');
 
-  // Append attachments
-  attachments.forEach((file) => {
-    formData.append('attachments', file);
-  });
+  // Append attachments with progress tracking
+  if (attachments && attachments.length > 0) {
+    for (const file of attachments) {
+      formData.append('attachments', file);
+    }
+  }
 
-  const response = await apiClient.post('/mail/send', formData, {
+  const config = {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
-  });
+    timeout: 120000, // 2 minute timeout for file uploads (longer than default)
+  };
+
+  // Add abort signal if provided (for cancel button support)
+  if (signal) {
+    config.signal = signal;
+  }
+
+  const response = await apiClient.post('/mail/send', formData, config);
   return response.data;
 };
 
