@@ -41,6 +41,15 @@
 - Use memory store as fallback (no Redis needed) ✅
 
 ### [x] Task 6.3: Fix Password Visibility Toggle in SettingsModal
+
+### [x] Task 6.4: Fix Attachment Uploads on Render ✅ DONE
+**Files:** `backend/src/utils/storage.js` + `backend/src/routes/emailRoutes.js` + `backend/src/controllers/emailController.js`
+- Added Cloudinary fallback to local storage when credentials are missing/invalid ✅
+- Fixed UPLOAD_DIR variable declaration order bug ✅
+- Added proper error handling for individual attachment failures (doesn't break entire email) ✅
+- Added multer error handler middleware with clear error messages ✅
+- Added logging for debugging file uploads on Render ✅
+- Added RENDER_APP_URL env var support for correct attachment URLs on Render ✅
 **File:** `frontend/src/components/SettingsModal.jsx`
 - Replace raw password input with PasswordInput component for "Current Password" field ✅
 

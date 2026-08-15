@@ -261,13 +261,19 @@ export const sendEmail = async (req, res, next) => {
     let processedAttachments = [];
     if (req.files && req.files.length > 0) {
       for (const file of req.files) {
-        const uploaded = await uploadFile(file);
-        processedAttachments.push({
-          url: uploaded.url,
-          filename: uploaded.filename,
-          mimeType: uploaded.mimeType,
-          size: uploaded.size,
-        });
+        try {
+          const uploaded = await uploadFile(file);
+          processedAttachments.push({
+            url: uploaded.url,
+            filename: uploaded.filename,
+            mimeType: uploaded.mimeType,
+            size: uploaded.size,
+          });
+        } catch (uploadErr) {
+          logger.error(`[GikpsMail] Failed to upload attachment ${file.originalname}:`, uploadErr.message);
+          // Don't fail the entire email if one attachment fails - skip it
+          console.warn(`[GikpsMail] Skipping failed attachment: ${file.originalname}`);
+        }
       }
     }
 
