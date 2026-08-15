@@ -171,12 +171,70 @@ export const sendEmailJson = async (req, res, next) => {
 
     let processedAttachments = [];
     if (attachments && Array.isArray(attachments)) {
-      processedAttachments = attachments.map(att => ({
-        url: att.url || '',
-        filename: att.filename || 'attachment',
-        mimeType: att.mimeType || 'application/octet-stream',
-        size: att.size || 0,
-      }));
+      const uploadResults = [];
+      const uploadErrors = [];
+
+      // Process each attachment: convert base64 to buffer, then upload via Cloudinary/local storage
+      for (const att of attachments) {
+        try {
+          let fileBuffer;
+          let filename = att.filename || 'attachment';
+          let mimeType = att.mimeType || 'application/octet-stream';
+
+          // Convert base64 content to a buffer
+          if (att.content && typeof att.content === 'string') {
+            // Handle data URI format (e.g., "data:image/png;base64,...") or raw base64
+            let base64Data = att.content;
+            if (base64Data.startsWith('data:')) {
+              const parts = base64Data.split(',');
+              mimeType = parts[0].match(/:(.*?);/)?.[1] || mimeType;
+              base64Data = parts[1] || base64Data;
+            }
+            fileBuffer = Buffer.from(base64Data, 'base64');
+          } else if (att.content && Buffer.isBuffer(att.content)) {
+            fileBuffer = att.content;
+          } else {
+            // No content provided — skip this attachment with a warning
+            console.warn(`[GikpsMail] Skipping attachment ${filename}: no content provided`);
+            uploadErrors.push({ file: filename, error: 'No content provided' });
+            continue;
+          }
+
+          const size = fileBuffer.length;
+
+          // Create a mock Multer-like file object for uploadFile()
+          const mockFile = {
+            buffer: fileBuffer,
+            originalname: filename,
+            mimetype: mimeType,
+            size: size,
+            fieldname: 'attachments',
+            encoding: '7bit',
+            destination: '',
+            filename: '',
+            path: '',
+          };
+
+          // Upload via the same Cloudinary/local storage logic as sendEmail
+          const uploaded = await uploadFile(mockFile);
+          uploadResults.push({
+            url: uploaded.url,
+            filename: uploaded.filename,
+            mimeType: uploaded.mimeType,
+            size: uploaded.size,
+          });
+        } catch (uploadErr) {
+          logger.error(`[GikpsMail] Failed to upload attachment ${att.filename || 'unknown'}:`, uploadErr.message);
+          uploadErrors.push({ file: att.filename || 'unknown', error: uploadErr.message });
+        }
+      }
+
+      processedAttachments = uploadResults;
+
+      // Log any failures but continue with successful uploads
+      if (uploadErrors.length > 0) {
+        console.warn(`[GikpsMail] ${uploadErrors.length} attachment(s) failed to upload:`, uploadErrors);
+      }
     }
 
     // Encrypt email content before storing

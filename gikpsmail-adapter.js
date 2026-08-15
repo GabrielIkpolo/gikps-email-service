@@ -42,8 +42,8 @@ class GikpsMailTransporter {
     this.fromName = config.auth?.fromName || DEFAULT_FROM_NAME;
     this.fromAddress = config.auth?.fromAddress || DEFAULT_FROM_ADDRESS;
     
-    // Timeout for requests (in ms)
-    this.timeout = config.timeout || 30000;
+    // Timeout for requests (in ms) — increased to 3 minutes to accommodate large attachment uploads
+    this.timeout = config.timeout || 180000;
     
     // Validate configuration on construction
     if (!this.apiKey) {
@@ -267,7 +267,7 @@ class GikpsMailTransporter {
  * @param {string} config.auth.api_key - Master API Key from GikpsMail settings
  * @param {string} [config.auth.fromName] - Default sender display name
  * @param {string} [config.auth.fromAddress] - Default sender email address
- * @param {number} [config.timeout=30000] - Request timeout in milliseconds
+ * @param {number} [config.timeout=180000] - Request timeout in milliseconds (default: 3 minutes)
  * @returns {GikpsMailTransporter} - Transporter instance
  * 
  * @example
