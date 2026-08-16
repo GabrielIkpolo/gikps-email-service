@@ -31,3 +31,6 @@ pnpm-debug.log*
 # Project Documentation (Keep plan and todo private)
 plan.md
 todo.md
+backend/logs/
+*.png
+node_modules/
