@@ -314,6 +314,7 @@ export const sendEmail = async (req, res, next) => {
     }
 
     const senderId = req.user.id;
+    logger.info(`[GikpsMail] sendEmail: Processing request for to=${to}, subject="${subject}", files=${req.files?.length || 0}`);
 
     // Handle attachments from multipart form data
     let processedAttachments = [];
@@ -321,10 +322,19 @@ export const sendEmail = async (req, res, next) => {
       const uploadResults = [];
       const uploadErrors = [];
       
+      logger.info(`[GikpsMail] sendEmail: Uploading ${req.files.length} attachment(s)...`);
+      
       // Process all uploads in parallel for better performance on Render
       await Promise.all(req.files.map(async (file) => {
         try {
+          const startTime = Date.now();
+          logger.info(`[GikpsMail] sendEmail: Uploading file ${file.originalname} (${(file.size / 1024).toFixed(1)} KB)`);
+          
           const uploaded = await uploadFile(file);
+          
+          const uploadTime = ((Date.now() - startTime) / 1000).toFixed(2);
+          logger.info(`[GikpsMail] sendEmail: ✅ Uploaded ${file.originalname} in ${uploadTime}s -> ${uploaded.url}`);
+          
           uploadResults.push({
             url: uploaded.url,
             filename: uploaded.filename,
@@ -332,7 +342,9 @@ export const sendEmail = async (req, res, next) => {
             size: uploaded.size,
           });
         } catch (uploadErr) {
-          logger.error(`[GikpsMail] Failed to upload attachment ${file.originalname}:`, uploadErr.message);
+          const errorMsg = `[GikpsMail] sendEmail: ❌ Failed to upload ${file.originalname}: ${uploadErr.message}`;
+          logger.error(errorMsg);
+          console.error(errorMsg);
           uploadErrors.push({ file: file.originalname, error: uploadErr.message });
         }
       }));
@@ -341,7 +353,9 @@ export const sendEmail = async (req, res, next) => {
       
       // Log any failures but continue with successful uploads
       if (uploadErrors.length > 0) {
-        console.warn(`[GikpsMail] ${uploadErrors.length} attachment(s) failed to upload:`, uploadErrors);
+        const warnMsg = `[GikpsMail] sendEmail: ⚠️ ${uploadErrors.length} attachment(s) failed to upload: ${JSON.stringify(uploadErrors)}`;
+        console.warn(warnMsg);
+        logger.warn(warnMsg);
       }
     }
 
@@ -358,6 +372,8 @@ export const sendEmail = async (req, res, next) => {
     // Encrypt email content before storing
     const encryptedText = encryptContent(text);
     const encryptedHtml = encryptContent(html);
+
+    logger.info(`[GikpsMail] sendEmail: Creating email in database with ${processedAttachments.length} attachment(s)...`);
 
     const email = await prisma.email.create({
       data: {
@@ -395,19 +411,26 @@ export const sendEmail = async (req, res, next) => {
       }
     });
 
+    logger.info(`[GikpsMail] sendEmail: ✅ Email created successfully with ID ${email.id}`);
+
     // Emit real-time event with sanitized data (no internal IDs exposed)
     const io = req.app.get('io');
     if (io) {
-      const sanitizedReceiver = sanitizeEmail(email, email.receiverId);
-      const sanitizedSender = sanitizeEmail(email, senderId);
-      io.to(`user_${email.receiverId}`).emit('new-email', {
-        type: 'received',
-        email: sanitizedReceiver
-      });
-      io.to(`user_${senderId}`).emit('new-email', {
-        type: 'sent',
-        email: sanitizedSender
-      });
+      try {
+        const sanitizedReceiver = sanitizeEmail(email, email.receiverId);
+        const sanitizedSender = sanitizeEmail(email, senderId);
+        io.to(`user_${email.receiverId}`).emit('new-email', {
+          type: 'received',
+          email: sanitizedReceiver
+        });
+        io.to(`user_${senderId}`).emit('new-email', {
+          type: 'sent',
+          email: sanitizedSender
+        });
+        logger.info(`[GikpsMail] sendEmail: ✅ Socket.IO events emitted`);
+      } catch (ioErr) {
+        logger.warn(`[GikpsMail] sendEmail: ⚠️ Socket.IO emit failed (non-critical): ${ioErr.message}`);
+      }
     }
 
     res.status(201).json({
@@ -415,6 +438,8 @@ export const sendEmail = async (req, res, next) => {
       data: { email: sanitizeEmail(email, senderId) }
     });
   } catch (err) {
+    logger.error(`[GikpsMail] sendEmail: ❌ Error: ${err.message}`, err.stack);
+    
     if (err.code === 'P2025' || err.code === 'P2023') {
       return next(new AppError('Recipient email address not found in GikpsMail', 404));
     }

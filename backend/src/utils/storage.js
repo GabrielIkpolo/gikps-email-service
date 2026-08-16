@@ -68,6 +68,7 @@ const USE_CLOUDINARY = hasValidCloudinary && process.env.NODE_ENV === 'productio
 export const uploadFile = async (file) => {
   const fileId = uuidv4();
   const filename = `${fileId}-${file.originalname}`;
+  const startTime = Date.now();
 
   // Try Cloudinary first if configured for production with valid credentials
   if (USE_CLOUDINARY) {
@@ -75,25 +76,59 @@ export const uploadFile = async (file) => {
       console.log(`[GikpsMail] Attempting Cloudinary upload: ${file.originalname} (${(file.size / 1024).toFixed(1)} KB)`);
       
       const result = await new Promise((resolve, reject) => {
+        const timeoutMs = parseInt(process.env.CLOUDINARY_UPLOAD_TIMEOUT_MS) || 180000; // Default: 3 minutes (safe for Render's 5-min HTTP limit)
+        let settled = false;
+        
+        // Create a timeout that rejects the promise if upload takes too long
+        const timeoutId = setTimeout(() => {
+          if (!settled) {
+            settled = true;
+            console.error(`[GikpsMail] ❌ Cloudinary upload TIMEOUT after ${timeoutMs}ms for ${file.originalname}`);
+            reject(new Error(`Cloudinary upload timed out after ${timeoutMs / 1000}s`));
+          }
+        }, timeoutMs);
+        
         const uploadStream = cloudinary.uploader.upload_stream(
           {
             resource_type: 'auto',
             public_id: fileId,
-            folder: 'gikpsmail',
+            folder: 'attachments',
             transformation: [
               { quality: 'auto' },
               { fetch_format: 'auto' }
             ]
           },
           (error, result) => {
-            if (error) return reject(error);
-            resolve(result);
+            if (!settled) {
+              settled = true;
+              clearTimeout(timeoutId);
+              if (error) return reject(error);
+              resolve(result);
+            }
           }
         );
+        
+        // Handle stream errors
+        uploadStream.on('error', (err) => {
+          if (!settled) {
+            settled = true;
+            clearTimeout(timeoutId);
+            console.error(`[GikpsMail] ❌ Cloudinary stream error for ${file.originalname}:`, err.message);
+            reject(err);
+          }
+        });
+        
         uploadStream.end(file.buffer);
       });
 
-      console.log(`[GikpsMail] ✅ File uploaded to Cloudinary: ${file.originalname}`);
+      const uploadTime = ((Date.now() - startTime) / 1000).toFixed(2);
+      console.log(`[GikpsMail] ✅ File uploaded to Cloudinary: ${file.originalname} (${uploadTime}s)`);
+      
+      // Warn if upload took longer than 2 minutes
+      if (Date.now() - startTime > 120000) {
+        console.warn(`[GikpsMail] ⚠️ Cloudinary upload was SLOW: ${file.originalname} took ${uploadTime}s. Consider optimizing or using a CDN.`);
+      }
+      
       return {
         url: result.secure_url,
         filename: fileId,
@@ -112,7 +147,8 @@ export const uploadFile = async (file) => {
     const filePath = path.join(UPLOAD_DIR, filename);
     fs.writeFileSync(filePath, file.buffer);
 
-    console.log(`[GikpsMail] ✅ File saved locally: ${file.originalname} (${(file.size / 1024).toFixed(1)} KB)`);
+    const uploadTime = ((Date.now() - startTime) / 1000).toFixed(2);
+    console.log(`[GikpsMail] ✅ File saved locally: ${file.originalname} (${uploadTime}s)`);
     return {
       url: `${APP_URL}/uploads/${filename}`,
       filename: filename,

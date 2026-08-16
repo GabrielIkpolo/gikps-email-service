@@ -105,7 +105,7 @@ app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // Initialize Socket.io with restricted CORS
 // IMPORTANT: Add ALLOWED_ORIGINS to Render env vars for production!
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,https://gikps-email-service.onrender.com,https://gikps-email-service-1.onrender.com')
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,https://gikps-email-service.onrender.com,https://gikps-email-service-1.onrender.com,https://console.cloudinary.com')
   .split(',')
   .map(o => o.trim())
   .filter(Boolean);
@@ -125,7 +125,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-API-Key'],
   credentials: true,
 }));
-app.use(express.json({ limit: '10mb' })); // Limit payload size
+app.use(express.json({ limit: '50mb' })); // Increased limit for large attachments
 
 // Request Logging Middleware
 app.use((req, res, next) => {

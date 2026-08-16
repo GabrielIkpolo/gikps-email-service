@@ -156,11 +156,25 @@ class GikpsMailTransporter {
 
     // Handle attachments (base64 encoded)
     if (attachments && attachments.length > 0) {
-      payload.attachments = attachments.map(att => ({
-        filename: att.filename || 'attachment',
-        content: att.content || '', // Expecting base64 string
-        mimeType: att.contentType || att.mime || 'application/octet-stream',
-      }));
+      payload.attachments = attachments.map(att => {
+        let content = '';
+        
+        // Handle different content types from Nodemailer
+        if (att.content) {
+          if (Buffer.isBuffer(att.content)) {
+            // Convert Buffer to base64 string for JSON transmission
+            content = att.content.toString('base64');
+          } else if (typeof att.content === 'string') {
+            content = att.content;
+          }
+        }
+        
+        return {
+          filename: att.filename || 'attachment',
+          content: content,
+          mimeType: att.contentType || att.mime || 'application/octet-stream',
+        };
+      });
     }
 
     try {
